@@ -1,0 +1,5 @@
+// to live json file data on local server
+json-server --watch data.json --port 8080
+
+//to start react vite project
+npm run dev
