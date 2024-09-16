@@ -43,3 +43,5 @@ export interface Meta {
   barcode: string;
   qrCode: string;
 }
+
+

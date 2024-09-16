@@ -1,12 +1,22 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchAllProducts, fetchProductsByFilters } from "./productAPI";
+import {
+  fetchAllProducts,
+  fetchBrands,
+  fetchCategories,
+  fetchProductsByFilters,
+  ProductResponse,
+} from "./productAPI";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import { Product } from "../models/Product";
+import { FilterOption } from "./components/ProductList";
 
 // Define the shape of the state
 export interface ProductState {
   products: Product[];
+  brands: FilterOption[];
+  categories: FilterOption[];
+  totalItems: number;
   status: "idle" | "loading" | "failed";
   error: string | null;
 }
@@ -14,12 +24,15 @@ export interface ProductState {
 // Initial state with typed structure
 const initialState: ProductState = {
   products: [],
+  brands: [],
+  categories: [],
+  totalItems: 0,
   status: "idle",
   error: null,
 };
 
 export const fetchAllProductsAsync = createAsyncThunk<
-  Product[],
+  ProductResponse,
   void,
   { rejectValue: string }
 >("product/fetchAllProducts", async (_, thunkAPI) => {
@@ -33,12 +46,51 @@ export const fetchAllProductsAsync = createAsyncThunk<
 });
 
 export const fetchProductsByFiltersAync = createAsyncThunk<
-  Product[],
-  Record<string, string>,
+  ProductResponse,
+  {
+    filter: Record<string, string | string[]>;
+    sort: Record<string, string>;
+    pagiantion: Record<number, number>;
+  },
   { rejectValue: string }
->("product/fetchProductsByFilters", async (filter, thunkAPI) => {
+>(
+  "product/fetchProductsByFilters",
+  async ({ filter, sort, pagiantion }, thunkAPI) => {
+    try {
+      const response: any = await fetchProductsByFilters(
+        filter,
+        sort,
+        pagiantion
+      );
+      // The value we return becomes the `fulfilled` action payload
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue("Failed to fetch products");
+    }
+  }
+);
+
+export const fetchBrandsAsync = createAsyncThunk<
+  FilterOption[],
+  void,
+  { rejectValue: string }
+>("product/fetchBrands", async (_, thunkAPI) => {
   try {
-    const response: any = await fetchProductsByFilters(filter);
+    const response: any = await fetchBrands();
+    // The value we return becomes the `fulfilled` action payload
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue("Failed to fetch products");
+  }
+});
+
+export const fetchCategoriesAsync = createAsyncThunk<
+  FilterOption[],
+  void,
+  { rejectValue: string }
+>("product/fetchCategories", async (_, thunkAPI) => {
+  try {
+    const response: any = await fetchCategories();
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   } catch (error) {
@@ -57,9 +109,10 @@ export const productSlice = createSlice({
       })
       .addCase(
         fetchAllProductsAsync.fulfilled,
-        (state, action: PayloadAction<Product[]>) => {
+        (state, action: PayloadAction<ProductResponse>) => {
           state.status = "idle";
-          state.products = action.payload;
+          state.products = action.payload.products;
+          state.totalItems = action.payload.totalItems;
         }
       )
       .addCase(fetchAllProductsAsync.rejected, (state, action) => {
@@ -71,12 +124,41 @@ export const productSlice = createSlice({
       })
       .addCase(
         fetchProductsByFiltersAync.fulfilled,
-        (state, action: PayloadAction<Product[]>) => {
+        (state, action: PayloadAction<ProductResponse>) => {
           state.status = "idle";
-          state.products = action.payload;
+          state.products = action.payload.products;
+          state.totalItems = action.payload.totalItems;
+        }
+      )
+      .addCase(fetchBrandsAsync.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload as string;
+      })
+      .addCase(fetchBrandsAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(
+        fetchBrandsAsync.fulfilled,
+        (state, action: PayloadAction<FilterOption[]>) => {
+          state.status = "idle";
+          state.brands = action.payload;
         }
       )
       .addCase(fetchProductsByFiltersAync.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload as string;
+      })
+      .addCase(fetchCategoriesAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(
+        fetchCategoriesAsync.fulfilled,
+        (state, action: PayloadAction<FilterOption[]>) => {
+          state.status = "idle";
+          state.categories = action.payload;
+        }
+      )
+      .addCase(fetchCategoriesAsync.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload as string;
       });
