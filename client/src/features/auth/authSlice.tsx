@@ -1,55 +1,90 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchCount } from "./authAPI";
+import { checkUser, creatUser } from "./authAPI";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
+import { RegisterUser, LoggedinUser, ErrorMessage } from "../models/Modal";
 
 // Define the shape of the state
-interface CounterState {
-  value: number;
-  status: "idle" | "loading";
+export interface AuthState {
+  loggedInUser: LoggedinUser | null;
+  status: "idle" | "loading" | "failed";
+  error: string | null;
 }
 
 // Initial state with typed structure
-const initialState: CounterState = {
-  value: 0,
+const initialState: AuthState = {
+  loggedInUser: null,
   status: "idle",
+  error: null,
 };
 
-// Define the type of the parameter and return value for fetchCount
-export const incrementAsync = createAsyncThunk<number, number>(
-  "counter/fetchCount",
-  async (amount: number) => {
-    const response: any = await fetchCount(amount);
-    // The value we return becomes the `fulfilled` action payload
-    return response.data;
+export const creatUserAsync = createAsyncThunk<
+  LoggedinUser,
+  RegisterUser,
+  { rejectValue: string }
+>("user/creatUser", async (userData, thunkAPI) => {
+  try {
+    const response = await creatUser(userData);
+    return response.data as LoggedinUser;
+  } catch (error) {
+    return thunkAPI.rejectWithValue("Failed to fetch user");
   }
-);
+});
+export const checkUserAsync = createAsyncThunk<
+  LoggedinUser,
+  LoggedinUser,
+  { rejectValue: string }
+>("user/checkUser", async (loginInfo, thunkAPI) => {
+  try {
+    const response = await checkUser(loginInfo);
+    return response.data as LoggedinUser;
+  } catch (error) {
+    if (typeof error === "object" && error !== null && "message" in error) {
+      return thunkAPI.rejectWithValue((error as ErrorMessage).message);
+    }
+    // If we can't determine the error type, return a default message
+    return thunkAPI.rejectWithValue("An unknown error occurred");
+  }
+});
 
 export const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(incrementAsync.pending, (state) => {
+      .addCase(creatUserAsync.pending, (state) => {
         state.status = "loading";
       })
       .addCase(
-        incrementAsync.fulfilled,
-        (state, action: PayloadAction<number>) => {
+        creatUserAsync.fulfilled,
+        (state, action: PayloadAction<LoggedinUser>) => {
           state.status = "idle";
-          state.value += action.payload;
+          state.loggedInUser = action.payload;
         }
-      );
+      )
+      .addCase(checkUserAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(
+        checkUserAsync.fulfilled,
+        (state, action: PayloadAction<LoggedinUser>) => {
+          state.status = "idle";
+          state.loggedInUser = action.payload;
+        }
+      )
+      .addCase(checkUserAsync.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload ?? "An unknown error occurred";
+      });
   },
 });
 
 // Export actions and selectors
-export const { increment } = counterSlice.actions;
+export const {} = authSlice.actions;
 
-export const selectCount = (state: { counter: CounterState }) =>
-  state.counter.value;
-
-export default counterSlice.reducer;
+export const useSelectorAuthState = () => {
+  const userState = useSelector((state: RootState) => state.auth);
+  return userState;
+};
+export default authSlice.reducer;

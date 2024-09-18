@@ -5,34 +5,64 @@ import SignupPage from "./pages/signup/SignupPage";
 import CartPage from "./pages/cart/CartPage";
 import Checkout from "./pages/checkout/Checkout";
 import ProductDetailPage from "./pages/product-detail/ProductDetailPage";
+import { AllRoutes } from "./constants/constants";
+import Protected from "./features/auth/components/Protected";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "./features/store";
+import { useEffect } from "react";
+import { useSelectorAuthState } from "./features/auth/authSlice";
+import { fetchItemsByUserIdAsync } from "./features/cart/cartSlice";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
+    path: `${AllRoutes.Home}`,
+    element: (
+      <Protected>
+        <Home />
+      </Protected>
+    ),
   },
   {
-    path: "/login",
+    path: `${AllRoutes.Login}`,
     element: <LoginPage />,
   },
   {
-    path: "/signup",
+    path: `${AllRoutes.Signup}`,
     element: <SignupPage />,
   },
   {
-    path: "/cart",
-    element: <CartPage />,
+    path: `${AllRoutes.Cart}`,
+    element: (
+      <Protected>
+        <CartPage />
+      </Protected>
+    ),
   },
   {
-    path: "/checkout",
-    element: <Checkout />,
+    path: `${AllRoutes.Checkout}`,
+    element: (
+      <Protected>
+        <Checkout />
+      </Protected>
+    ),
   },
   {
-    path: "/product-detail/",
-    element: <ProductDetailPage />,
+    path: `${AllRoutes.ProductDetail}`, //product-detail by id
+    element: (
+      <Protected>
+        <ProductDetailPage />
+      </Protected>
+    ),
   },
 ]);
 function App() {
+  const dispatch = useDispatch<AppDispatch>();
+  const { loggedInUser } = useSelectorAuthState();
+  useEffect(() => {
+    if (loggedInUser) {
+      dispatch(fetchItemsByUserIdAsync(loggedInUser?.id));
+    }
+  }, [dispatch, loggedInUser?.id]);
   return (
     <div className="App">
       <RouterProvider router={router} />

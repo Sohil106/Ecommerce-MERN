@@ -12,8 +12,10 @@ import {
   ShoppingCartIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ChildrenProps } from "../models/Modal";
+import { AllRoutes } from "../../constants/constants";
+import { useSelectorCartState } from "../cart/cartSlice";
 
 const user = {
   name: "Tom Cook",
@@ -29,21 +31,18 @@ const navigation = [
   //   { name: "Reports", href: "#", current: false },
 ];
 const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
+  { name: "Your Profile", link: "adsf" },
+  { name: "Settings", link: "dfsdfs" },
+  { name: "Sign out", link: `/login` },
 ];
 
-function classNames(...classes: any) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-type Props = {
-  children?: React.ReactNode;
-};
-
-const Navbar = ({ children }: Props): React.ReactNode => {
+const Navbar = ({ children }: ChildrenProps) => {
   const navigate = useNavigate();
+  const { items } = useSelectorCartState();
   return (
     <>
       {/*
@@ -104,10 +103,11 @@ const Navbar = ({ children }: Props): React.ReactNode => {
                     <span className="sr-only">View notifications</span>
                     <ShoppingCartIcon aria-hidden="true" className="h-6 w-6" />
                   </button>
-
-                  <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 mb-7 -ml-3 z-10 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                    2
-                  </span>
+                  {items.length > 0 && (
+                    <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 mb-7 -ml-3 z-10 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                      {items.length}
+                    </span>
+                  )}
 
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-3">
@@ -128,12 +128,12 @@ const Navbar = ({ children }: Props): React.ReactNode => {
                     >
                       {userNavigation.map((item) => (
                         <MenuItem key={item.name}>
-                          <a
-                            href={item.href}
+                          <Link
+                            to={item.link}
                             className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
                           >
                             {item.name}
-                          </a>
+                          </Link>
                         </MenuItem>
                       ))}
                     </MenuItems>
@@ -196,27 +196,26 @@ const Navbar = ({ children }: Props): React.ReactNode => {
                 </div>
                 <button
                   type="button"
-                  onClick={() => navigate("/cart")}
+                  onClick={() => navigate(`${AllRoutes.Cart}`)}
                   className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">View notifications</span>
                   <ShoppingCartIcon aria-hidden="true" className="h-6 w-6" />
                 </button>
-                <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 mb-7 -ml-3 z-10 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                  2
-                </span>
+                {items.length > 0 && (
+                  <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 mb-7 -ml-3 z-10 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                    {items.length}
+                  </span>
+                )}
               </div>
               <div className="mt-3 space-y-1 px-2">
                 {userNavigation.map((item) => (
-                  <DisclosureButton
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                  >
-                    {item.name}
-                  </DisclosureButton>
+                  <Link to={item.link} key={item.name}>
+                    <DisclosureButton className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">
+                      {item.name}
+                    </DisclosureButton>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -1,55 +1,138 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchCount } from "./cartAPI";
+import {
+  addToCart,
+  deleteCartItem,
+  fetchItemsByUserId,
+  updateCartItem,
+} from "./cartAPI";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
+import { CartItem } from "../models/CartItem";
 
 // Define the shape of the state
-interface CounterState {
-  value: number;
-  status: "idle" | "loading";
+export interface CartState {
+  status: "idle" | "loading" | "failed";
+  items: CartItem[];
 }
 
 // Initial state with typed structure
-const initialState: CounterState = {
-  value: 0,
+const initialState: CartState = {
   status: "idle",
+  items: [],
 };
 
-// Define the type of the parameter and return value for fetchCount
-export const incrementAsync = createAsyncThunk<number, number>(
-  "counter/fetchCount",
-  async (amount: number) => {
-    const response: any = await fetchCount(amount);
-    // The value we return becomes the `fulfilled` action payload
-    return response.data;
+export const addToCartAsync = createAsyncThunk<
+  CartItem,
+  CartItem,
+  { rejectValue: string }
+>("cart/addToCart", async (item, thunkAPI) => {
+  try {
+    const response = await addToCart(item);
+    return response.data as CartItem;
+  } catch (error) {
+    return thunkAPI.rejectWithValue("Failed to add cartitem");
   }
-);
+});
+export const fetchItemsByUserIdAsync = createAsyncThunk<
+  CartItem[],
+  string,
+  { rejectValue: string }
+>("cart/fetchItemsByUserId", async (userId, thunkAPI) => {
+  try {
+    const response = await fetchItemsByUserId(userId);
+    // The value we return becomes the `fulfilled` action payload
+    return response.data as CartItem[];
+  } catch (error) {
+    return thunkAPI.rejectWithValue("Failed to fetch products");
+  }
+});
+
+export const updateCartItemAsync = createAsyncThunk<
+  CartItem,
+  CartItem,
+  { rejectValue: string }
+>("cart/updateCartItem", async (item, thunkAPI) => {
+  try {
+    const response = await updateCartItem(item);
+    return response.data as CartItem;
+  } catch (error) {
+    return thunkAPI.rejectWithValue("Failed to update cartitem");
+  }
+});
+export const deleteCartItemAsync = createAsyncThunk<
+  { id: string },
+  string,
+  { rejectValue: string }
+>("cart/deleteCartItem", async (id, thunkAPI) => {
+  try {
+    const response = await deleteCartItem(id);
+    return response.data as { id: string };
+  } catch (error) {
+    return thunkAPI.rejectWithValue("Failed to update cartitem");
+  }
+});
 
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(incrementAsync.pending, (state) => {
+      .addCase(addToCartAsync.pending, (state) => {
         state.status = "loading";
       })
       .addCase(
-        incrementAsync.fulfilled,
-        (state, action: PayloadAction<number>) => {
+        addToCartAsync.fulfilled,
+        (state, action: PayloadAction<CartItem>) => {
           state.status = "idle";
-          state.value += action.payload;
+          state.items.push(action.payload);
+        }
+      )
+      .addCase(fetchItemsByUserIdAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(
+        fetchItemsByUserIdAsync.fulfilled,
+        (state, action: PayloadAction<CartItem[]>) => {
+          state.status = "idle";
+          state.items = action.payload;
+        }
+      )
+      .addCase(updateCartItemAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(
+        updateCartItemAsync.fulfilled,
+        (state, action: PayloadAction<CartItem>) => {
+          state.status = "idle";
+          const index = state.items.findIndex(
+            (item) => item.id === action.payload.id
+          );
+          state.items[index] = action.payload;
+        }
+      )
+      .addCase(deleteCartItemAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(
+        deleteCartItemAsync.fulfilled,
+        (state, action: PayloadAction<{ id: string }>) => {
+          state.status = "idle";
+          const index = state.items.findIndex(
+            (item) => item.id.toString() === action.payload.id
+          );
+          state.items.splice(index, 1);
         }
       );
   },
 });
 
 // Export actions and selectors
-export const { increment } = cartSlice.actions;
+export const {} = cartSlice.actions;
 
-export const selectCount = (state: { counter: CounterState }) =>
-  state.counter.value;
+export const useSelectorCartState = () => {
+  const userState = useSelector((state: RootState) => state.cart);
+  return userState;
+};
 
 export default cartSlice.reducer;

@@ -76,3 +76,12 @@ export function fetchBrands() {
     resolve({ data });
   });
 }
+
+export function fetchProductById(id: string) {
+  return new Promise<{ data: Product[] }>(async (resolve) => {
+    //TODO: we will not hard code server URL here
+    const response = await fetch(`http://localhost:8080/products/${id}`);
+    const data = await response.json();
+    resolve({ data });
+  });
+}

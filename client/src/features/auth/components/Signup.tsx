@@ -1,8 +1,34 @@
-import { Link } from "react-router-dom";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { Link, Navigate } from "react-router-dom";
+import { AppDispatch } from "../../store";
+import { creatUserAsync, useSelectorAuthState } from "../authSlice";
+import { RegisterUser, signupUser } from "../../models/Modal";
+import { AllRoutes } from "../../../constants/constants";
 
 const Signup = () => {
+  const dispatch = useDispatch<AppDispatch>();
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<signupUser>();
+
+  const { loggedInUser } = useSelectorAuthState();
+
+  const onSubmit: SubmitHandler<signupUser> = async (data) => {
+    const authUser: RegisterUser = {
+      email: data.email,
+      password: data.password,
+    };
+    await dispatch(creatUserAsync(authUser));
+  };
+  // console.log({ errors });
   return (
     <>
+      {loggedInUser && <Navigate to={AllRoutes.Home}></Navigate>}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
@@ -16,7 +42,11 @@ const Signup = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="#" method="POST" className="space-y-6">
+          <form
+            noValidate
+            className="space-y-6"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <div>
               <label
                 htmlFor="email"
@@ -27,12 +57,19 @@ const Signup = () => {
               <div className="mt-2">
                 <input
                   id="email"
-                  name="email"
                   type="email"
-                  required
-                  autoComplete="email"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  {...register("email", {
+                    required: "email is required",
+                    pattern: {
+                      value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                      message: "email is not valid",
+                    },
+                  })}
                 />
+                {errors["email"] && (
+                  <p className="text-red-500">{errors["email"]?.message}</p>
+                )}
               </div>
             </div>
 
@@ -56,12 +93,20 @@ const Signup = () => {
               <div className="mt-2">
                 <input
                   id="password"
-                  name="password"
                   type="password"
-                  required
-                  autoComplete="current-password"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  {...register("password", {
+                    required: "confirm-password is required",
+                    pattern: {
+                      value:
+                        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm,
+                      message: "password is not valid",
+                    },
+                  })}
                 />
+                {errors["password"] && (
+                  <p className="text-red-500">{errors["password"]?.message}</p>
+                )}
               </div>
             </div>
 
@@ -76,12 +121,20 @@ const Signup = () => {
               </div>
               <div className="mt-2">
                 <input
-                  id="password"
-                  name="password"
+                  id="confirm-password"
                   type="password"
-                  required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  {...register("confirm-password", {
+                    required: "confirm-password is required",
+                    validate: (value, formValues) =>
+                      value === formValues.password || "password not matching",
+                  })}
                 />
+                {errors["confirm-password"] && (
+                  <p className="text-red-500">
+                    {errors["confirm-password"]?.message}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -98,7 +151,7 @@ const Signup = () => {
           <p className="mt-10 text-center text-sm text-gray-500">
             Already a Member?{" "}
             <Link
-              to="/login"
+              to={AllRoutes.Login}
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
               Login

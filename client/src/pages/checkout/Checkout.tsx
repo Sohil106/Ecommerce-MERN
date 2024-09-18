@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { AllRoutes } from "../../constants/constants";
 
 const products = [
   {
@@ -401,7 +402,7 @@ const Checkout = () => {
                 <p>
                   or{" "}
                   <Link
-                    to="/"
+                    to={AllRoutes.Home}
                     type="button"
                     className="font-medium text-indigo-600 hover:text-indigo-500"
                   >

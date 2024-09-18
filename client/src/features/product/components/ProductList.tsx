@@ -474,7 +474,7 @@ function Pagination({
             {Array.from({ length: totalPages }).map((el, index) => (
               <div
                 key={index}
-                onClick={(e) => handlePage(index + 1)}
+                onClick={() => handlePage(index + 1)}
                 aria-current="page"
                 className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold cursor-pointer ${
                   index + 1 === page
@@ -518,7 +518,7 @@ function ProductGrid({ products }: ProductGridProps) {
             <div
               key={product.id}
               className="group relative  p-2 border-gray-200 border-2"
-              onClick={() => navigate("product-detail")}
+              onClick={() => navigate(`product-detail/${product.id}`)}
             >
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
                 <img
