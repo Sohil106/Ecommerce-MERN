@@ -24,17 +24,21 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "@heroicons/react/20/solid";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
   fetchBrandsAsync,
   fetchCategoriesAsync,
   fetchProductsByFiltersAync,
   useSelectorProductState,
-} from "../productSlice";
+} from "../../product/productSlice";
 import { AppDispatch } from "../../store";
 import { Product } from "../../../models/Product";
-import { discountedPrice, ITEMS_PER_PAGE } from "../../../constants/constants";
+import {
+  AllRoutes,
+  discountedPrice,
+  ITEMS_PER_PAGE,
+} from "../../../constants/constants";
 import Pagination from "../../common/Pagination";
 
 const sortOptions = [
@@ -71,14 +75,14 @@ type FilterState = {
   [key: string]: string[];
 };
 
-const ProductList = () => {
+const AdminProductList = () => {
   const { products, categories, brands, totalItems } =
     useSelectorProductState();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
   const [filter, setFilter] = useState({});
   const [sort, setSort] = useState({});
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState<number>(1);
   const filters = [
     {
       id: "category",
@@ -223,7 +227,17 @@ const ProductList = () => {
               <DesktopFilter handleFilter={handleFilter} filters={filters} />
 
               {/* Product grid */}
+
               <div className="lg:col-span-3">
+                <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+                  <Link
+                    to={AllRoutes.ProductForm}
+                    type="button"
+                    className="rounded-md bg-green-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    Add New Product
+                  </Link>
+                </div>
                 {/* Product List */}
                 <ProductGrid products={products} />
               </div>
@@ -245,7 +259,7 @@ const ProductList = () => {
     </div>
   );
 };
-export default ProductList;
+export default AdminProductList;
 //main Component Ended here
 
 //MobileFilter Component
@@ -427,39 +441,49 @@ function ProductGrid({ products }: ProductGridProps) {
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
           {products.map((product) => (
-            <div
-              key={product.id}
-              className="group relative  p-2 border-gray-200 border-2"
-              onClick={() => navigate(`product-detail/${product.id}`)}
-            >
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
-                <img
-                  alt={product.title}
-                  src={product.thumbnail}
-                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                />
+            <div key={product.id}>
+              <div
+                className="group relative  p-2 border-gray-200 border-2"
+                onClick={() => navigate(`product-detail/${product.id}`)}
+              >
+                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
+                  <img
+                    alt={product.title}
+                    src={product.thumbnail}
+                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  />
+                </div>
+                <div className="mt-4 flex justify-between">
+                  <div>
+                    <h3 className="text-sm text-gray-700">
+                      <span aria-hidden="true" className="absolute inset-0" />
+                      {product.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-500">
+                      <span className="flex items-center gap-1">
+                        <StarIcon className="w-6 h-6 inline" />
+                        {product.rating}
+                      </span>
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-gray-900">
+                      ${discountedPrice(product)}
+                    </p>
+                    <p className="text-sm font-medium line-through text-gray-400">
+                      ${product.price}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-gray-700">
-                    <span aria-hidden="true" className="absolute inset-0" />
-                    {product.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">
-                    <span className="flex items-center gap-1">
-                      <StarIcon className="w-6 h-6 inline" />
-                      {product.rating}
-                    </span>
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-gray-900">
-                    ${discountedPrice(product)}
-                  </p>
-                  <p className="text-sm font-medium line-through text-gray-400">
-                    ${product.price}
-                  </p>
-                </div>
+              <div className="py-3">
+                <Link
+                  to={`/admin/product-form/edit/${product.id}`}
+                  type="button"
+                  className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Edit Product
+                </Link>
               </div>
             </div>
           ))}

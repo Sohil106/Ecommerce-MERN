@@ -1,6 +1,6 @@
-import { CartItem } from "../models/CartItem";
+import { CartItem, CartItemWithoutId } from "../../models/CartItem";
 
-export function addToCart(item: CartItem) {
+export function addToCart(item: CartItemWithoutId) {
   return new Promise<{ data: CartItem }>(async (resolve) => {
     const response = await fetch("http://localhost:8080/cart", {
       method: "POST",
@@ -42,5 +42,17 @@ export function deleteCartItem(itemId: string) {
     });
     // TODO : on sever it will only return relevent information(not password)
     resolve({ data: { id: itemId } });
+  });
+}
+
+export async function resetCart(userId: string) {
+  //get all items of user's cart - and then delete each
+  return new Promise<{ status: string }>(async (resolve) => {
+    const response = await fetchItemsByUserId(userId);
+    const items = response.data;
+    for (let item of items) {
+      await deleteCartItem(item.id.toString());
+    }
+    resolve({ status: "success" });
   });
 }

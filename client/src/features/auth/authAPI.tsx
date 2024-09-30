@@ -1,4 +1,4 @@
-import { ErrorMessage, LoggedinUser, RegisterUser } from "../models/Modal";
+import { ErrorMessage, LoggedinUser, RegisterUser } from "../../models/Modal";
 
 export function creatUser(userData: RegisterUser) {
   return new Promise<{ data: LoggedinUser }>(async (resolve) => {
@@ -25,5 +25,12 @@ export function checkUser(loginInfo: LoggedinUser) {
     } else {
       reject({ message: "Invalid Credentials" } as ErrorMessage);
     }
+  });
+}
+
+export function signOut(userId: string) {
+  return new Promise<{ data: string }>(async (resolve) => {
+    // TODO : on sever we will remove user session info
+    resolve({ data: "success" });
   });
 }

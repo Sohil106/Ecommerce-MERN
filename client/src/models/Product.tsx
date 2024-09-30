@@ -1,5 +1,8 @@
-export interface Product {
-  id: number;
+export interface Product extends ProductWithoutId {
+  id: string;
+}
+
+export interface ProductWithoutId {
   title: string;
   description: string;
   category: string;

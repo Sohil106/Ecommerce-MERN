@@ -6,57 +6,35 @@
       "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
       "category": "beauty",
       "price": 9.99,
-      "discountPercentage": 7.17,
+      "discountPercentage": "15",
       "rating": 4.94,
-      "stock": 5,
-      "tags": [
-        "beauty",
-        "mascara"
-      ],
+      "stock": "12",
+      "tags": [],
       "brand": "Essence",
-      "sku": "RCH45Q1A",
-      "weight": 2,
+      "sku": "",
+      "weight": 0,
       "dimensions": {
-        "width": 23.17,
-        "height": 14.43,
-        "depth": 28.01
+        "width": 0,
+        "height": 0,
+        "depth": 0
       },
-      "warrantyInformation": "1 month warranty",
-      "shippingInformation": "Ships in 1 month",
-      "availabilityStatus": "Low Stock",
-      "reviews": [
-        {
-          "rating": 2,
-          "comment": "Very unhappy with my purchase!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "John Doe",
-          "reviewerEmail": "john.doe@x.dummyjson.com"
-        },
-        {
-          "rating": 2,
-          "comment": "Not as described!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Nolan Gonzalez",
-          "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Very satisfied!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Scarlett Wright",
-          "reviewerEmail": "scarlett.wright@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "30 days return policy",
-      "minimumOrderQuantity": 24,
+      "warrantyInformation": "",
+      "shippingInformation": "",
+      "availabilityStatus": "",
+      "reviews": [],
+      "returnPolicy": "",
+      "minimumOrderQuantity": 1,
       "meta": {
-        "createdAt": "2024-05-23T08:56:21.618Z",
-        "updatedAt": "2024-05-23T08:56:21.618Z",
-        "barcode": "9164035109868",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+        "createdAt": "",
+        "updatedAt": "",
+        "barcode": "",
+        "qrCode": ""
       },
       "images": [
-        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
+        null,
+        null,
+        null
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
     },
@@ -305,60 +283,36 @@
       "title": "Calvin Klein CK One",
       "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
       "category": "fragrances",
-      "price": 49.99,
+      "price": "59.99",
       "discountPercentage": 0.32,
-      "rating": 4.85,
+      "rating": 0,
       "stock": 17,
-      "tags": [
-        "fragrances",
-        "perfumes"
-      ],
+      "tags": [],
       "brand": "Calvin Klein",
-      "sku": "DZM2JQZE",
-      "weight": 5,
+      "sku": "",
+      "weight": 0,
       "dimensions": {
-        "width": 11.53,
-        "height": 14.44,
-        "depth": 6.81
+        "width": 0,
+        "height": 0,
+        "depth": 0
       },
-      "warrantyInformation": "5 year warranty",
-      "shippingInformation": "Ships overnight",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 5,
-          "comment": "Great value for money!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Sophia Brown",
-          "reviewerEmail": "sophia.brown@x.dummyjson.com"
-        },
-        {
-          "rating": 3,
-          "comment": "Very disappointed!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Madison Collins",
-          "reviewerEmail": "madison.collins@x.dummyjson.com"
-        },
-        {
-          "rating": 1,
-          "comment": "Poor quality!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Maya Reed",
-          "reviewerEmail": "maya.reed@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "No return policy",
-      "minimumOrderQuantity": 20,
+      "warrantyInformation": "",
+      "shippingInformation": "",
+      "availabilityStatus": "",
+      "reviews": [],
+      "returnPolicy": "",
+      "minimumOrderQuantity": 1,
       "meta": {
-        "createdAt": "2024-05-23T08:56:21.619Z",
-        "updatedAt": "2024-05-23T08:56:21.619Z",
-        "barcode": "2210136215089",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+        "createdAt": "",
+        "updatedAt": "",
+        "barcode": "",
+        "qrCode": ""
       },
       "images": [
         "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/1.png",
         "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/2.png",
-        "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/3.png"
+        "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/3.png",
+        null
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/thumbnail.png"
     },
@@ -491,60 +445,36 @@
       "title": "Dolce Shine Eau de",
       "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
       "category": "fragrances",
-      "price": 69.99,
-      "discountPercentage": 11.47,
-      "rating": 2.68,
+      "price": "89",
+      "discountPercentage": "11.47",
+      "rating": 0,
       "stock": 3,
-      "tags": [
-        "fragrances",
-        "perfumes"
-      ],
+      "tags": [],
       "brand": "Dolce & Gabbana",
-      "sku": "1NBFK980",
-      "weight": 5,
+      "sku": "",
+      "weight": 0,
       "dimensions": {
-        "width": 17,
-        "height": 24.57,
-        "depth": 13.3
+        "width": 0,
+        "height": 0,
+        "depth": 0
       },
-      "warrantyInformation": "5 year warranty",
-      "shippingInformation": "Ships in 1-2 business days",
-      "availabilityStatus": "Low Stock",
-      "reviews": [
-        {
-          "rating": 4,
-          "comment": "Very satisfied!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Xavier Wright",
-          "reviewerEmail": "xavier.wright@x.dummyjson.com"
-        },
-        {
-          "rating": 1,
-          "comment": "Poor quality!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Mila Hernandez",
-          "reviewerEmail": "mila.hernandez@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Very happy with my purchase!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Sophia Brown",
-          "reviewerEmail": "sophia.brown@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "30 days return policy",
-      "minimumOrderQuantity": 9,
+      "warrantyInformation": "",
+      "shippingInformation": "",
+      "availabilityStatus": "",
+      "reviews": [],
+      "returnPolicy": "",
+      "minimumOrderQuantity": 1,
       "meta": {
-        "createdAt": "2024-05-23T08:56:21.619Z",
-        "updatedAt": "2024-05-23T08:56:21.619Z",
-        "barcode": "1939383392674",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+        "createdAt": "",
+        "updatedAt": "",
+        "barcode": "",
+        "qrCode": ""
       },
       "images": [
         "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/1.png",
         "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/2.png",
-        "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/3.png"
+        "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/3.png",
+        null
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/thumbnail.png"
     },
@@ -11570,6 +11500,158 @@
         "https://cdn.dummyjson.com/products/images/womens-watches/Women's%20Wrist%20Watch/3.png"
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/womens-watches/Women's%20Wrist%20Watch/thumbnail.png"
+    },
+    {
+      "id": "a4be",
+      "title": "SAMSUNG Galaxy Tab A 7 inch Tablet",
+      "description": "The SAMSUNG Galaxy Tab A 7 inch Tablet, the perfect companion for those seeking a seamless digital experience. This sleek and stylish tablet, designed by SAMSUNG, boasts a powerful 8 GB RAM for smooth multitasking. Its vibrant 7-inch display allows for immersive viewing, while the Android operating system ensures access to a wide range of apps. With a generous 32 GB internal storage, you can store all your important files, photos, and videos. The long-lasting 4000 mAh battery capacity",
+      "category": "tablets",
+      "price": "124.40",
+      "discountPercentage": "10",
+      "rating": 0,
+      "stock": "5",
+      "tags": [],
+      "brand": "Samsung",
+      "sku": "",
+      "weight": 0,
+      "dimensions": {
+        "width": 0,
+        "height": 0,
+        "depth": 0
+      },
+      "warrantyInformation": "",
+      "shippingInformation": "",
+      "availabilityStatus": "",
+      "reviews": [],
+      "returnPolicy": "",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "",
+        "updatedAt": "",
+        "barcode": "",
+        "qrCode": ""
+      },
+      "images": [
+        "https://images.jdmagicbox.com/quickquotes/images_main/samsung_galaxy_tab_a_tablet_8_gb_17_8_cm_7_wi_fi_cellular_black__80051736_4.jpg",
+        "https://images.jdmagicbox.com/quickquotes/images_main/samsung_galaxy_tab_a_tablet_8_gb_17_8_cm_7_wi_fi_cellular_black__80051736_2.jpg",
+        "https://images.jdmagicbox.com/quickquotes/images_main/samsung_galaxy_tab_a_tablet_8_gb_17_8_cm_7_wi_fi_cellular_black__80051736_3.jpg",
+        "https://images.jdmagicbox.com/quickquotes/images_main/samsung_galaxy_tab_a_tablet_8_gb_17_8_cm_7_wi_fi_cellular_black__80051736_9.jpg"
+      ],
+      "thumbnail": "https://images.jdmagicbox.com/quickquotes/images_main/samsung_galaxy_tab_a_tablet_8_gb_17_8_cm_7_wi_fi_cellular_black__80051736_0.jpg"
+    },
+    {
+      "id": "dd2c",
+      "title": "realme 8 5G",
+      "description": "Introducing the Realme 8 5G. With a 5Ghz processor, 128GB storage, and \na stunning Supersonic Blue color, the Realme 8 5G is perfect for those \nwho demand the latest and greatest in smartphone technology. With a 6.3\" \nFull HD+ display, Realme 8 5G is perfect for enjoying your favorite entertainment content, \nor for taking pictures and videos that will stun your friends and family.",
+      "category": "smartphones",
+      "price": "189.45",
+      "discountPercentage": "15",
+      "rating": 0,
+      "stock": "5",
+      "tags": [],
+      "brand": "Realme",
+      "sku": "",
+      "weight": 0,
+      "dimensions": {
+        "width": 0,
+        "height": 0,
+        "depth": 0
+      },
+      "warrantyInformation": "",
+      "shippingInformation": "",
+      "availabilityStatus": "",
+      "reviews": [],
+      "returnPolicy": "",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "",
+        "updatedAt": "",
+        "barcode": "",
+        "qrCode": ""
+      },
+      "images": [
+        "https://www.kibotek.com/wp-content/uploads/2021/04/kiboTEK_realme_8_5g_002.jpg",
+        "https://www.kibotek.com/wp-content/uploads/2021/04/kiboTEK_realme_8_5g_009.png",
+        "https://m.media-amazon.com/images/I/41R+QFMXnfS._SY741_.jpg",
+        "https://www.kibotek.com/wp-content/uploads/2021/04/kiboTEK_realme_8_5g_008.png"
+      ],
+      "thumbnail": "https://www.kibotek.com/wp-content/uploads/2021/04/kiboTEK_realme_8_5g_006.png"
+    },
+    {
+      "id": "fa3c",
+      "title": "Calvin Klein CK One",
+      "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
+      "category": "fragrances",
+      "price": "59.99",
+      "discountPercentage": 0.32,
+      "rating": 0,
+      "stock": 17,
+      "tags": [],
+      "brand": "Calvin Klein",
+      "sku": "",
+      "weight": 0,
+      "dimensions": {
+        "width": 0,
+        "height": 0,
+        "depth": 0
+      },
+      "warrantyInformation": "",
+      "shippingInformation": "",
+      "availabilityStatus": "",
+      "reviews": [],
+      "returnPolicy": "",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "",
+        "updatedAt": "",
+        "barcode": "",
+        "qrCode": ""
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/1.png",
+        "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/2.png",
+        "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/3.png",
+        null
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/thumbnail.png"
+    },
+    {
+      "id": "ccc4",
+      "title": "Dolce Shine Eau de",
+      "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
+      "category": "fragrances",
+      "price": "89",
+      "discountPercentage": "11.47",
+      "rating": 0,
+      "stock": 3,
+      "tags": [],
+      "brand": "Dolce & Gabbana",
+      "sku": "",
+      "weight": 0,
+      "dimensions": {
+        "width": 0,
+        "height": 0,
+        "depth": 0
+      },
+      "warrantyInformation": "",
+      "shippingInformation": "",
+      "availabilityStatus": "",
+      "reviews": [],
+      "returnPolicy": "",
+      "minimumOrderQuantity": 1,
+      "meta": {
+        "createdAt": "",
+        "updatedAt": "",
+        "barcode": "",
+        "qrCode": ""
+      },
+      "images": [
+        "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/1.png",
+        "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/2.png",
+        "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/3.png",
+        null
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/thumbnail.png"
     }
   ],
   "categories": [
@@ -12100,220 +12182,1065 @@
   ],
   "users": [
     {
-      "id": "3804",
-      "email": "sohilvekariya123@gmail.com",
-      "password": "Sohil@2002"
-    },
-    {
       "id": "7051",
       "email": "krunal123@gmail.com",
-      "password": "Krunal@2002"
+      "password": "Krunal@2002",
+      "addresses": [],
+      "role": "admin"
     },
     {
       "id": "1012",
       "email": "abhi234@gmail.com",
-      "password": "Abhi@234"
+      "password": "Abhi@234",
+      "addresses": [],
+      "role": "user"
     },
     {
       "id": "1013",
       "email": "yash123@gmail.com",
-      "password": "Yash@123"
+      "password": "Yash@123",
+      "addresses": [],
+      "role": "user"
     },
     {
       "id": "32c3",
       "email": "dhairya123@gmail.com",
-      "password": "Dhairya@123"
+      "password": "Dhairya@123",
+      "addresses": [
+        {
+          "country": "India",
+          "name": "Dhairya Vadodariya",
+          "email": "dhairya222@gmail.com",
+          "phone": "8932412345",
+          "street": "Yamuna Palace",
+          "city": "Surat",
+          "state": "Gujarat",
+          "zipcode": "394101"
+        }
+      ],
+      "role": "user"
+    },
+    {
+      "id": "16cc",
+      "email": "sohilvekariya123@gmail.com",
+      "password": "Sohil@2002",
+      "addresses": [
+        {
+          "country": "Canada",
+          "name": "sohil vekariya",
+          "email": "20itsoh002@ldce.ac.in",
+          "phone": "8758948010",
+          "street": "Vekariya Street, Amarnagar",
+          "city": "Jetpur",
+          "state": "Gujarat",
+          "zipcode": "360485"
+        },
+        {
+          "country": "India",
+          "name": "krunal vekariya",
+          "email": "krunal123@gmail.com",
+          "street": "Vekariya Street, Amarnagar",
+          "city": "Jetpur",
+          "state": "Gujarat",
+          "zipcode": "394101",
+          "phone": "8932412345"
+        },
+        {
+          "country": "Mexico",
+          "name": "Dhairya Vadodariya",
+          "email": "dhairya123@gmail.com",
+          "phone": "9876542134",
+          "street": "Yamuna Palace",
+          "city": "Mexico",
+          "state": "Mexicos",
+          "zipcode": "122435"
+        }
+      ],
+      "role": "user"
     }
   ],
   "cart": [
     {
-      "id": "80",
-      "title": "Huawei Matebook X Pro",
-      "description": "The Huawei Matebook X Pro is a slim and stylish laptop with a high-resolution touchscreen display, offering a premium experience for users on the go.",
-      "category": "laptops",
-      "price": 1399.99,
-      "discountPercentage": 15.25,
-      "rating": 4.62,
-      "stock": 34,
+      "id": "7ce1",
+      "title": "Essence Mascara Lash Princess",
+      "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
+      "category": "beauty",
+      "price": 9.99,
+      "discountPercentage": 7.17,
+      "rating": 4.94,
+      "stock": 5,
       "tags": [
-        "laptops"
+        "beauty",
+        "mascara"
       ],
-      "brand": "Huawei",
-      "sku": "U2CBNNB0",
-      "weight": 9,
+      "brand": "Essence",
+      "sku": "RCH45Q1A",
+      "weight": 2,
       "dimensions": {
-        "width": 22.11,
-        "height": 11.11,
-        "depth": 23.07
+        "width": 23.17,
+        "height": 14.43,
+        "depth": 28.01
       },
-      "warrantyInformation": "2 year warranty",
-      "shippingInformation": "Ships in 2 weeks",
-      "availabilityStatus": "In Stock",
+      "warrantyInformation": "1 month warranty",
+      "shippingInformation": "Ships in 1 month",
+      "availabilityStatus": "Low Stock",
       "reviews": [
         {
-          "rating": 4,
-          "comment": "Great value for money!",
-          "date": "2024-05-23T08:56:21.622Z",
-          "reviewerName": "Samantha Howard",
-          "reviewerEmail": "samantha.howard@x.dummyjson.com"
+          "rating": 2,
+          "comment": "Very unhappy with my purchase!",
+          "date": "2024-05-23T08:56:21.618Z",
+          "reviewerName": "John Doe",
+          "reviewerEmail": "john.doe@x.dummyjson.com"
         },
         {
           "rating": 2,
-          "comment": "Would not buy again!",
-          "date": "2024-05-23T08:56:21.622Z",
-          "reviewerName": "Daniel Cook",
-          "reviewerEmail": "daniel.cook@x.dummyjson.com"
+          "comment": "Not as described!",
+          "date": "2024-05-23T08:56:21.618Z",
+          "reviewerName": "Nolan Gonzalez",
+          "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
         },
         {
           "rating": 5,
           "comment": "Very satisfied!",
-          "date": "2024-05-23T08:56:21.622Z",
-          "reviewerName": "Brayden Fleming",
-          "reviewerEmail": "brayden.fleming@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "60 days return policy",
-      "minimumOrderQuantity": 1,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.622Z",
-        "updatedAt": "2024-05-23T08:56:21.622Z",
-        "barcode": "1232723732298",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/1.png",
-        "https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/2.png",
-        "https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/3.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/thumbnail.png",
-      "quantity": 5,
-      "user": "3804"
-    },
-    {
-      "id": "2",
-      "title": "Eyeshadow Palette with Mirror",
-      "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
-      "category": "beauty",
-      "price": 19.99,
-      "discountPercentage": 5.5,
-      "rating": 3.28,
-      "stock": 44,
-      "tags": [
-        "beauty",
-        "eyeshadow"
-      ],
-      "brand": "Glamour Beauty",
-      "sku": "MVCFH27F",
-      "weight": 3,
-      "dimensions": {
-        "width": 12.42,
-        "height": 8.63,
-        "depth": 29.13
-      },
-      "warrantyInformation": "1 year warranty",
-      "shippingInformation": "Ships in 2 weeks",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 4,
-          "comment": "Very satisfied!",
           "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Liam Garcia",
-          "reviewerEmail": "liam.garcia@x.dummyjson.com"
-        },
-        {
-          "rating": 1,
-          "comment": "Very disappointed!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Nora Russell",
-          "reviewerEmail": "nora.russell@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Highly impressed!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Elena Baker",
-          "reviewerEmail": "elena.baker@x.dummyjson.com"
+          "reviewerName": "Scarlett Wright",
+          "reviewerEmail": "scarlett.wright@x.dummyjson.com"
         }
       ],
       "returnPolicy": "30 days return policy",
-      "minimumOrderQuantity": 32,
+      "minimumOrderQuantity": 24,
       "meta": {
         "createdAt": "2024-05-23T08:56:21.618Z",
         "updatedAt": "2024-05-23T08:56:21.618Z",
-        "barcode": "2817839095220",
+        "barcode": "9164035109868",
         "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
       },
       "images": [
-        "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/1.png"
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"
       ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png",
+      "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
       "quantity": 1,
-      "user": "32c3"
-    },
+      "user": "7051"
+    }
+  ],
+  "orders": [
     {
-      "id": "6",
-      "title": "Calvin Klein CK One",
-      "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
-      "category": "fragrances",
-      "price": 49.99,
-      "discountPercentage": 0.32,
-      "rating": 4.85,
-      "stock": 17,
-      "tags": [
-        "fragrances",
-        "perfumes"
-      ],
-      "brand": "Calvin Klein",
-      "sku": "DZM2JQZE",
-      "weight": 5,
-      "dimensions": {
-        "width": 11.53,
-        "height": 14.44,
-        "depth": 6.81
-      },
-      "warrantyInformation": "5 year warranty",
-      "shippingInformation": "Ships overnight",
-      "availabilityStatus": "In Stock",
-      "reviews": [
+      "id": "1b95",
+      "items": [
         {
-          "rating": 5,
-          "comment": "Great value for money!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Sophia Brown",
-          "reviewerEmail": "sophia.brown@x.dummyjson.com"
+          "id": "e1cc",
+          "title": "New DELL XPS 13 9300 Laptop",
+          "description": "The New DELL XPS 13 9300 Laptop is a compact and powerful device, featuring a virtually borderless InfinityEdge display and high-end performance for various tasks.",
+          "category": "laptops",
+          "price": 1499.99,
+          "discountPercentage": 11.7,
+          "rating": 2.98,
+          "stock": 18,
+          "tags": [
+            "laptops"
+          ],
+          "brand": "Dell",
+          "sku": "XBJJ446X",
+          "weight": 10,
+          "dimensions": {
+            "width": 12.09,
+            "height": 6.43,
+            "depth": 15.69
+          },
+          "warrantyInformation": "Lifetime warranty",
+          "shippingInformation": "Ships overnight",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 3,
+              "comment": "Very disappointed!",
+              "date": "2024-05-23T08:56:21.623Z",
+              "reviewerName": "Julian Newton",
+              "reviewerEmail": "julian.newton@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Very pleased!",
+              "date": "2024-05-23T08:56:21.623Z",
+              "reviewerName": "Grace Perry",
+              "reviewerEmail": "grace.perry@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Great product!",
+              "date": "2024-05-23T08:56:21.623Z",
+              "reviewerName": "Daniel Taylor",
+              "reviewerEmail": "daniel.taylor@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "7 days return policy",
+          "minimumOrderQuantity": 1,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.623Z",
+            "updatedAt": "2024-05-23T08:56:21.623Z",
+            "barcode": "0358629687929",
+            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/1.png",
+            "https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/2.png",
+            "https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/thumbnail.png",
+          "quantity": 1,
+          "user": "16cc"
         },
         {
-          "rating": 3,
-          "comment": "Very disappointed!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Madison Collins",
-          "reviewerEmail": "madison.collins@x.dummyjson.com"
-        },
-        {
-          "rating": 1,
-          "comment": "Poor quality!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Maya Reed",
-          "reviewerEmail": "maya.reed@x.dummyjson.com"
+          "id": "eca9",
+          "title": "Green Bell Pepper",
+          "description": "Fresh and vibrant green bell pepper, perfect for adding color and flavor to your dishes.",
+          "category": "groceries",
+          "price": 1.29,
+          "discountPercentage": 15.5,
+          "rating": 4.28,
+          "stock": 89,
+          "tags": [
+            "vegetables"
+          ],
+          "sku": "HU7S7VQ0",
+          "weight": 7,
+          "dimensions": {
+            "width": 7.32,
+            "height": 14.31,
+            "depth": 21.38
+          },
+          "warrantyInformation": "5 year warranty",
+          "shippingInformation": "Ships overnight",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 4,
+              "comment": "Excellent quality!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Maya Reed",
+              "reviewerEmail": "maya.reed@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Would buy again!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Madison Collins",
+              "reviewerEmail": "madison.collins@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Would buy again!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Ethan Thompson",
+              "reviewerEmail": "ethan.thompson@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "30 days return policy",
+          "minimumOrderQuantity": 1,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.620Z",
+            "updatedAt": "2024-05-23T08:56:21.620Z",
+            "barcode": "7583442707568",
+            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/groceries/Green%20Bell%20Pepper/1.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Green%20Bell%20Pepper/thumbnail.png",
+          "quantity": 1,
+          "user": "16cc"
         }
       ],
-      "returnPolicy": "No return policy",
-      "minimumOrderQuantity": 20,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.619Z",
-        "updatedAt": "2024-05-23T08:56:21.619Z",
-        "barcode": "2210136215089",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+      "totalAmount": 1501.28,
+      "totalItems": 2,
+      "user": {
+        "id": "16cc",
+        "email": "sohilvekariya123@gmail.com",
+        "password": "Sohil@2002",
+        "addresses": [
+          {
+            "country": "India",
+            "name": "sohil vekariya",
+            "email": "20itsoh002@ldce.ac.in",
+            "phone": "8758948010",
+            "street": "Vekariya Street, Amarnagar",
+            "city": "Jetpur",
+            "state": "Gujarat",
+            "zipcode": "364485"
+          },
+          {
+            "country": "India",
+            "name": "smit kakadiya",
+            "email": "smitkakadiya123@gmail.com",
+            "phone": "8932412345",
+            "street": "Yamuna Palace",
+            "city": "Surat",
+            "state": "Gujarat",
+            "zipcode": "243251"
+          }
+        ]
       },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/1.png",
-        "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/2.png",
-        "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/3.png"
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "country": "India",
+        "name": "sohil vekariya",
+        "email": "20itsoh002@ldce.ac.in",
+        "phone": "8758948010",
+        "street": "Vekariya Street, Amarnagar",
+        "city": "Jetpur",
+        "state": "Gujarat",
+        "zipcode": "364485"
+      },
+      "status": "dispatched"
+    },
+    {
+      "id": "1da9",
+      "items": [
+        {
+          "id": "c49a",
+          "title": "Red Nail Polish",
+          "description": "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home.",
+          "category": "beauty",
+          "price": 8.99,
+          "discountPercentage": 2.46,
+          "rating": 3.91,
+          "stock": 71,
+          "tags": [
+            "beauty",
+            "nail polish"
+          ],
+          "brand": "Nail Couture",
+          "sku": "YUIIIP4W",
+          "weight": 9,
+          "dimensions": {
+            "width": 8.11,
+            "height": 10.89,
+            "depth": 29.06
+          },
+          "warrantyInformation": "1 year warranty",
+          "shippingInformation": "Ships in 1 week",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Very pleased!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Leo Rivera",
+              "reviewerEmail": "leo.rivera@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Great product!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Evan Reed",
+              "reviewerEmail": "evan.reed@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Highly recommended!",
+              "date": "2024-05-23T08:56:21.619Z",
+              "reviewerName": "Evelyn Sanchez",
+              "reviewerEmail": "evelyn.sanchez@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "No return policy",
+          "minimumOrderQuantity": 46,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.619Z",
+            "updatedAt": "2024-05-23T08:56:21.619Z",
+            "barcode": "3212847902461",
+            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/beauty/Red%20Nail%20Polish/1.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Red%20Nail%20Polish/thumbnail.png",
+          "quantity": 1,
+          "user": "16cc"
+        }
       ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/thumbnail.png",
-      "quantity": 1,
-      "user": "32c3"
+      "totalAmount": 8.99,
+      "totalItems": 1,
+      "user": {
+        "id": "16cc",
+        "email": "sohilvekariya123@gmail.com",
+        "password": "Sohil@2002",
+        "addresses": [
+          {
+            "country": "India",
+            "name": "sohil vekariya",
+            "email": "20itsoh002@ldce.ac.in",
+            "phone": "8758948010",
+            "street": "Vekariya Street, Amarnagar",
+            "city": "Jetpur",
+            "state": "Gujarat",
+            "zipcode": "364485"
+          },
+          {
+            "country": "India",
+            "name": "smit kakadiya",
+            "email": "smitkakadiya123@gmail.com",
+            "phone": "8932412345",
+            "street": "Yamuna Palace",
+            "city": "Surat",
+            "state": "Gujarat",
+            "zipcode": "243251"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "country": "India",
+        "name": "sohil vekariya",
+        "email": "20itsoh002@ldce.ac.in",
+        "phone": "8758948010",
+        "street": "Vekariya Street, Amarnagar",
+        "city": "Jetpur",
+        "state": "Gujarat",
+        "zipcode": "364485"
+      },
+      "status": "delivered"
+    },
+    {
+      "id": "0ca6",
+      "items": [
+        {
+          "id": "510f",
+          "title": "Essence Mascara Lash Princess",
+          "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
+          "category": "beauty",
+          "price": 9.99,
+          "discountPercentage": 7.17,
+          "rating": 4.94,
+          "stock": 5,
+          "tags": [
+            "beauty",
+            "mascara"
+          ],
+          "brand": "Essence",
+          "sku": "RCH45Q1A",
+          "weight": 2,
+          "dimensions": {
+            "width": 23.17,
+            "height": 14.43,
+            "depth": 28.01
+          },
+          "warrantyInformation": "1 month warranty",
+          "shippingInformation": "Ships in 1 month",
+          "availabilityStatus": "Low Stock",
+          "reviews": [
+            {
+              "rating": 2,
+              "comment": "Very unhappy with my purchase!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "John Doe",
+              "reviewerEmail": "john.doe@x.dummyjson.com"
+            },
+            {
+              "rating": 2,
+              "comment": "Not as described!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Nolan Gonzalez",
+              "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Scarlett Wright",
+              "reviewerEmail": "scarlett.wright@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "30 days return policy",
+          "minimumOrderQuantity": 24,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.618Z",
+            "updatedAt": "2024-05-23T08:56:21.618Z",
+            "barcode": "9164035109868",
+            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+          "quantity": 1,
+          "user": "16cc"
+        }
+      ],
+      "totalAmount": 9.99,
+      "totalItems": 1,
+      "user": {
+        "id": "16cc",
+        "email": "sohilvekariya123@gmail.com",
+        "password": "Sohil@2002",
+        "addresses": [
+          {
+            "country": "India",
+            "name": "sohil vekariya",
+            "email": "20itsoh002@ldce.ac.in",
+            "phone": "8758948010",
+            "street": "Vekariya Street, Amarnagar",
+            "city": "Jetpur",
+            "state": "Gujarat",
+            "zipcode": "364485"
+          },
+          {
+            "country": "India",
+            "name": "smit kakadiya",
+            "email": "smitkakadiya123@gmail.com",
+            "phone": "8932412345",
+            "street": "Yamuna Palace",
+            "city": "Surat",
+            "state": "Gujarat",
+            "zipcode": "243251"
+          }
+        ]
+      },
+      "paymentMethod": "card-payment",
+      "selectedAddress": {
+        "country": "India",
+        "name": "sohil vekariya",
+        "email": "20itsoh002@ldce.ac.in",
+        "phone": "8758948010",
+        "street": "Vekariya Street, Amarnagar",
+        "city": "Jetpur",
+        "state": "Gujarat",
+        "zipcode": "364485"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "32ee",
+      "items": [
+        {
+          "id": "7fb9",
+          "title": "Powder Canister",
+          "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.",
+          "category": "beauty",
+          "price": 14.99,
+          "discountPercentage": 18.14,
+          "rating": 3.82,
+          "stock": 59,
+          "tags": [
+            "beauty",
+            "face powder"
+          ],
+          "brand": "Velvet Touch",
+          "sku": "9EN8WLT2",
+          "weight": 8,
+          "dimensions": {
+            "width": 24.16,
+            "height": 10.7,
+            "depth": 11.07
+          },
+          "warrantyInformation": "2 year warranty",
+          "shippingInformation": "Ships in 1-2 business days",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Very happy with my purchase!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Ethan Thompson",
+              "reviewerEmail": "ethan.thompson@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Great value for money!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Levi Hicks",
+              "reviewerEmail": "levi.hicks@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Highly impressed!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Hazel Gardner",
+              "reviewerEmail": "hazel.gardner@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "60 days return policy",
+          "minimumOrderQuantity": 25,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.618Z",
+            "updatedAt": "2024-05-23T08:56:21.618Z",
+            "barcode": "0516267971277",
+            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/1.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png",
+          "quantity": 1,
+          "user": "16cc"
+        }
+      ],
+      "totalAmount": 14.99,
+      "totalItems": 1,
+      "user": {
+        "id": "16cc",
+        "email": "sohilvekariya123@gmail.com",
+        "password": "Sohil@2002",
+        "addresses": [
+          {
+            "country": "India",
+            "name": "sohil vekariya",
+            "email": "20itsoh002@ldce.ac.in",
+            "phone": "8758948010",
+            "street": "Vekariya Street, Amarnagar",
+            "city": "Jetpur",
+            "state": "Gujarat",
+            "zipcode": "364485"
+          },
+          {
+            "country": "India",
+            "name": "smit kakadiya",
+            "email": "smitkakadiya123@gmail.com",
+            "phone": "8932412345",
+            "street": "Yamuna Palace",
+            "city": "Surat",
+            "state": "Gujarat",
+            "zipcode": "243251"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "country": "India",
+        "name": "sohil vekariya",
+        "email": "20itsoh002@ldce.ac.in",
+        "phone": "8758948010",
+        "street": "Vekariya Street, Amarnagar",
+        "city": "Jetpur",
+        "state": "Gujarat",
+        "zipcode": "364485"
+      },
+      "status": "cancelled"
+    },
+    {
+      "id": "987c",
+      "items": [
+        {
+          "id": "b4b9",
+          "title": "Annibale Colombo Sofa",
+          "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
+          "category": "furniture",
+          "price": 2499.99,
+          "discountPercentage": 18.54,
+          "rating": 3.08,
+          "stock": 16,
+          "tags": [
+            "furniture",
+            "sofas"
+          ],
+          "brand": "Annibale Colombo",
+          "sku": "LUU95CQP",
+          "weight": 3,
+          "dimensions": {
+            "width": 20.97,
+            "height": 19.11,
+            "depth": 25.81
+          },
+          "warrantyInformation": "1 month warranty",
+          "shippingInformation": "Ships overnight",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Tyler Davis",
+              "reviewerEmail": "tyler.davis@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Excellent quality!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Hannah Robinson",
+              "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+            },
+            {
+              "rating": 3,
+              "comment": "Waste of money!",
+              "date": "2024-05-23T08:56:21.620Z",
+              "reviewerName": "Madison Collins",
+              "reviewerEmail": "madison.collins@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "7 days return policy",
+          "minimumOrderQuantity": 1,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.620Z",
+            "updatedAt": "2024-05-23T08:56:21.620Z",
+            "barcode": "0426785817074",
+            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
+            "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
+          "quantity": 1,
+          "user": "16cc"
+        },
+        {
+          "id": "2536",
+          "title": "Apple Airpower Wireless Charger",
+          "description": "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging.",
+          "category": "mobile-accessories",
+          "price": 79.99,
+          "discountPercentage": 6.54,
+          "rating": 4.51,
+          "stock": 78,
+          "tags": [
+            "electronics",
+            "wireless chargers"
+          ],
+          "brand": "Apple",
+          "sku": "CBIU3PMZ",
+          "weight": 3,
+          "dimensions": {
+            "width": 25.51,
+            "height": 20.44,
+            "depth": 26.48
+          },
+          "warrantyInformation": "Lifetime warranty",
+          "shippingInformation": "Ships in 1 month",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Awesome product!",
+              "date": "2024-05-23T08:56:21.624Z",
+              "reviewerName": "Bella Gonzalez",
+              "reviewerEmail": "bella.gonzalez@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Very pleased!",
+              "date": "2024-05-23T08:56:21.624Z",
+              "reviewerName": "Eli Bennett",
+              "reviewerEmail": "eli.bennett@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Very pleased!",
+              "date": "2024-05-23T08:56:21.624Z",
+              "reviewerName": "Cameron Perez",
+              "reviewerEmail": "cameron.perez@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "7 days return policy",
+          "minimumOrderQuantity": 8,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.624Z",
+            "updatedAt": "2024-05-23T08:56:21.624Z",
+            "barcode": "6981066059882",
+            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpower%20Wireless%20Charger/1.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpower%20Wireless%20Charger/thumbnail.png",
+          "quantity": 1,
+          "user": "16cc"
+        }
+      ],
+      "totalAmount": 2111.25,
+      "totalItems": 2,
+      "user": {
+        "id": "16cc",
+        "email": "sohilvekariya123@gmail.com",
+        "password": "Sohil@2002",
+        "addresses": [
+          {
+            "country": "Canada",
+            "name": "sohil vekariya",
+            "email": "20itsoh002@ldce.ac.in",
+            "phone": "8758948010",
+            "street": "Vekariya Street, Amarnagar",
+            "city": "Jetpur",
+            "state": "Gujarat",
+            "zipcode": "360485"
+          },
+          {
+            "country": "India",
+            "name": "krunal vekariya",
+            "email": "krunal123@gmail.com",
+            "street": "Vekariya Street, Amarnagar",
+            "city": "Jetpur",
+            "state": "Gujarat",
+            "zipcode": "394101",
+            "phone": "8932412345"
+          },
+          {
+            "country": "Mexico",
+            "name": "Dhairya Vadodariya",
+            "email": "dhairya123@gmail.com",
+            "phone": "9876542134",
+            "street": "Yamuna Palace",
+            "city": "Mexico",
+            "state": "Mexicos",
+            "zipcode": "122435"
+          }
+        ],
+        "role": "user"
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "country": "Mexico",
+        "name": "Dhairya Vadodariya",
+        "email": "dhairya123@gmail.com",
+        "phone": "9876542134",
+        "street": "Yamuna Palace",
+        "city": "Mexico",
+        "state": "Mexicos",
+        "zipcode": "122435"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "a3fa",
+      "items": [
+        {
+          "id": "9db4",
+          "title": "Vaseline Men Body and Face Lotion",
+          "description": "Vaseline Men Body and Face Lotion is a specially formulated lotion designed to provide long-lasting moisture to men's skin. It absorbs quickly and helps keep the skin hydrated and healthy.",
+          "category": "skin-care",
+          "price": 9.99,
+          "discountPercentage": 11.63,
+          "rating": 3.97,
+          "stock": 54,
+          "tags": [
+            "personal care",
+            "body lotion"
+          ],
+          "brand": "Vaseline",
+          "sku": "31IK2JUC",
+          "weight": 10,
+          "dimensions": {
+            "width": 28.39,
+            "height": 25.58,
+            "depth": 15.49
+          },
+          "warrantyInformation": "5 year warranty",
+          "shippingInformation": "Ships in 1 month",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Great product!",
+              "date": "2024-05-23T08:56:21.625Z",
+              "reviewerName": "Carter Rivera",
+              "reviewerEmail": "carter.rivera@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Awesome product!",
+              "date": "2024-05-23T08:56:21.625Z",
+              "reviewerName": "Jackson Morales",
+              "reviewerEmail": "jackson.morales@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Very happy with my purchase!",
+              "date": "2024-05-23T08:56:21.625Z",
+              "reviewerName": "Grace Green",
+              "reviewerEmail": "grace.green@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "60 days return policy",
+          "minimumOrderQuantity": 48,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.625Z",
+            "updatedAt": "2024-05-23T08:56:21.625Z",
+            "barcode": "7128996084231",
+            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/1.png",
+            "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/2.png",
+            "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/thumbnail.png",
+          "quantity": 1,
+          "user": "16cc"
+        }
+      ],
+      "totalAmount": 8.83,
+      "totalItems": 1,
+      "user": {
+        "id": "16cc",
+        "email": "sohilvekariya123@gmail.com",
+        "password": "Sohil@2002",
+        "addresses": [
+          {
+            "country": "Canada",
+            "name": "sohil vekariya",
+            "email": "20itsoh002@ldce.ac.in",
+            "phone": "8758948010",
+            "street": "Vekariya Street, Amarnagar",
+            "city": "Jetpur",
+            "state": "Gujarat",
+            "zipcode": "360485"
+          },
+          {
+            "country": "India",
+            "name": "krunal vekariya",
+            "email": "krunal123@gmail.com",
+            "street": "Vekariya Street, Amarnagar",
+            "city": "Jetpur",
+            "state": "Gujarat",
+            "zipcode": "394101",
+            "phone": "8932412345"
+          },
+          {
+            "country": "Mexico",
+            "name": "Dhairya Vadodariya",
+            "email": "dhairya123@gmail.com",
+            "phone": "9876542134",
+            "street": "Yamuna Palace",
+            "city": "Mexico",
+            "state": "Mexicos",
+            "zipcode": "122435"
+          }
+        ],
+        "role": "user"
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "country": "Mexico",
+        "name": "Dhairya Vadodariya",
+        "email": "dhairya123@gmail.com",
+        "phone": "9876542134",
+        "street": "Yamuna Palace",
+        "city": "Mexico",
+        "state": "Mexicos",
+        "zipcode": "122435"
+      },
+      "status": "pending"
+    },
+    {
+      "id": "4bb0",
+      "items": [
+        {
+          "id": "80c2",
+          "title": "Sunglasses",
+          "description": "The Sunglasses offer a classic and simple design with a focus on functionality. These sunglasses provide essential UV protection while maintaining a timeless look.",
+          "category": "sunglasses",
+          "price": 22.99,
+          "discountPercentage": 4.87,
+          "rating": 2.58,
+          "stock": 59,
+          "tags": [
+            "eyewear",
+            "sunglasses"
+          ],
+          "brand": "Fashion Shades",
+          "sku": "FCWURP6V",
+          "weight": 6,
+          "dimensions": {
+            "width": 8.15,
+            "height": 28.81,
+            "depth": 8.4
+          },
+          "warrantyInformation": "5 year warranty",
+          "shippingInformation": "Ships in 1-2 business days",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 4,
+              "comment": "Awesome product!",
+              "date": "2024-05-23T08:56:21.626Z",
+              "reviewerName": "Isabella Anderson",
+              "reviewerEmail": "isabella.anderson@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.626Z",
+              "reviewerName": "Nathan Dixon",
+              "reviewerEmail": "nathan.dixon@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Awesome product!",
+              "date": "2024-05-23T08:56:21.626Z",
+              "reviewerName": "Zoe Nicholson",
+              "reviewerEmail": "zoe.nicholson@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "60 days return policy",
+          "minimumOrderQuantity": 11,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.626Z",
+            "updatedAt": "2024-05-23T08:56:21.626Z",
+            "barcode": "9189532411470",
+            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/sunglasses/Sunglasses/1.png",
+            "https://cdn.dummyjson.com/products/images/sunglasses/Sunglasses/2.png",
+            "https://cdn.dummyjson.com/products/images/sunglasses/Sunglasses/3.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/sunglasses/Sunglasses/thumbnail.png",
+          "quantity": 1,
+          "user": "16cc"
+        }
+      ],
+      "totalAmount": 21.87,
+      "totalItems": 1,
+      "user": {
+        "id": "16cc",
+        "email": "sohilvekariya123@gmail.com",
+        "password": "Sohil@2002",
+        "addresses": [
+          {
+            "country": "Canada",
+            "name": "sohil vekariya",
+            "email": "20itsoh002@ldce.ac.in",
+            "phone": "8758948010",
+            "street": "Vekariya Street, Amarnagar",
+            "city": "Jetpur",
+            "state": "Gujarat",
+            "zipcode": "360485"
+          },
+          {
+            "country": "India",
+            "name": "krunal vekariya",
+            "email": "krunal123@gmail.com",
+            "street": "Vekariya Street, Amarnagar",
+            "city": "Jetpur",
+            "state": "Gujarat",
+            "zipcode": "394101",
+            "phone": "8932412345"
+          },
+          {
+            "country": "Mexico",
+            "name": "Dhairya Vadodariya",
+            "email": "dhairya123@gmail.com",
+            "phone": "9876542134",
+            "street": "Yamuna Palace",
+            "city": "Mexico",
+            "state": "Mexicos",
+            "zipcode": "122435"
+          }
+        ],
+        "role": "user"
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "country": "Canada",
+        "name": "sohil vekariya",
+        "email": "20itsoh002@ldce.ac.in",
+        "phone": "8758948010",
+        "street": "Vekariya Street, Amarnagar",
+        "city": "Jetpur",
+        "state": "Gujarat",
+        "zipcode": "360485"
+      },
+      "status": "pending"
     }
   ],
   "total": 190,

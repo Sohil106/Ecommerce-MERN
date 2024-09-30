@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { checkUser, creatUser } from "./authAPI";
+import { checkUser, creatUser, signOut } from "./authAPI";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
-import { RegisterUser, LoggedinUser, ErrorMessage } from "../models/Modal";
+import { RegisterUser, LoggedinUser, ErrorMessage } from "../../models/Modal";
 
 // Define the shape of the state
 export interface AuthState {
@@ -30,6 +30,7 @@ export const creatUserAsync = createAsyncThunk<
     return thunkAPI.rejectWithValue("Failed to fetch user");
   }
 });
+
 export const checkUserAsync = createAsyncThunk<
   LoggedinUser,
   LoggedinUser,
@@ -44,6 +45,19 @@ export const checkUserAsync = createAsyncThunk<
     }
     // If we can't determine the error type, return a default message
     return thunkAPI.rejectWithValue("An unknown error occurred");
+  }
+});
+
+export const signOutAsync = createAsyncThunk<
+  string,
+  string,
+  { rejectValue: string }
+>("user/signOut", async (userId, thunkAPI) => {
+  try {
+    const response = await signOut(userId);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue("Failed to fetch user");
   }
 });
 
@@ -73,9 +87,19 @@ export const authSlice = createSlice({
           state.loggedInUser = action.payload;
         }
       )
-      .addCase(checkUserAsync.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.payload ?? "An unknown error occurred";
+      .addCase(
+        checkUserAsync.rejected,
+        (state, action: PayloadAction<string | undefined>) => {
+          state.status = "failed";
+          state.error = action.payload ?? "An unknown error occurred";
+        }
+      )
+      .addCase(signOutAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(signOutAsync.fulfilled, (state) => {
+        state.status = "idle";
+        state.loggedInUser = null;
       });
   },
 });

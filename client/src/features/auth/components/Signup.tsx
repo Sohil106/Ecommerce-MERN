@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import { AppDispatch } from "../../store";
 import { creatUserAsync, useSelectorAuthState } from "../authSlice";
-import { RegisterUser, signupUser } from "../../models/Modal";
+import { RegisterUser, signupUser } from "../../../models/Modal";
 import { AllRoutes } from "../../../constants/constants";
 
 const Signup = () => {
@@ -12,7 +12,6 @@ const Signup = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<signupUser>();
 
@@ -22,6 +21,8 @@ const Signup = () => {
     const authUser: RegisterUser = {
       email: data.email,
       password: data.password,
+      addresses: [],
+      role: "user",
     };
     await dispatch(creatUserAsync(authUser));
   };
@@ -81,14 +82,6 @@ const Signup = () => {
                 >
                   Password
                 </label>
-                <div className="text-sm">
-                  <a
-                    href="#"
-                    className="font-semibold text-indigo-600 hover:text-indigo-500"
-                  >
-                    Forgot password?
-                  </a>
-                </div>
               </div>
               <div className="mt-2">
                 <input

@@ -1,15 +1,17 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
+  creatProduct,
   fetchAllProducts,
   fetchBrands,
   fetchCategories,
   fetchProductById,
   fetchProductsByFilters,
   ProductResponse,
+  updateProduct,
 } from "./productAPI";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
-import { Product } from "../models/Product";
+import { Product, ProductWithoutId } from "../../models/Product";
 import { FilterOption } from "./components/ProductList";
 
 // Define the shape of the state
@@ -24,7 +26,7 @@ export interface ProductState {
 }
 
 const initialProduct: Product = {
-  id: 0,
+  id: "",
   title: "",
   description: "",
   category: "",
@@ -82,7 +84,7 @@ export const fetchProductByIdAsync = createAsyncThunk<
   { rejectValue: string }
 >("product/fetchProductById", async (id, thunkAPI) => {
   try {
-    const response: any = await fetchProductById(id);
+    const response = await fetchProductById(id);
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   } catch (error) {
@@ -135,7 +137,7 @@ export const fetchCategoriesAsync = createAsyncThunk<
   { rejectValue: string }
 >("product/fetchCategories", async (_, thunkAPI) => {
   try {
-    const response: any = await fetchCategories();
+    const response = await fetchCategories();
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   } catch (error) {
@@ -143,10 +145,40 @@ export const fetchCategoriesAsync = createAsyncThunk<
   }
 });
 
+export const creatProductAsync = createAsyncThunk<
+  Product,
+  ProductWithoutId,
+  { rejectValue: string }
+>("/creatProduct", async (product, thunkAPI) => {
+  try {
+    const response = await creatProduct(product);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue("Failed to create product");
+  }
+});
+
+export const updateProductAsync = createAsyncThunk<
+  Product,
+  Product,
+  { rejectValue: string }
+>("/updateProduct", async (product, thunkAPI) => {
+  try {
+    const response = await updateProduct(product);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue("Failed to update product");
+  }
+});
+
 export const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {},
+  reducers: {
+    resetProduct: (state) => {
+      state.product = initialProduct;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllProductsAsync.pending, (state) => {
@@ -220,12 +252,43 @@ export const productSlice = createSlice({
       .addCase(fetchCategoriesAsync.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload as string;
+      })
+      .addCase(creatProductAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(
+        creatProductAsync.fulfilled,
+        (state, action: PayloadAction<Product>) => {
+          state.status = "idle";
+          state.products.push(action.payload);
+        }
+      )
+      .addCase(creatProductAsync.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload as string;
+      })
+      .addCase(updateProductAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(
+        updateProductAsync.fulfilled,
+        (state, action: PayloadAction<Product>) => {
+          state.status = "idle";
+          const index = state.products.findIndex(
+            (product) => product.id === action.payload.id
+          );
+          state.products[index] = action.payload;
+        }
+      )
+      .addCase(updateProductAsync.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload as string;
       });
   },
 });
 
 // Export actions and selectors
-export const {} = productSlice.actions;
+export const { resetProduct } = productSlice.actions;
 
 export const useSelectorProductState = () => {
   const productState = useSelector((state: RootState) => state.product);

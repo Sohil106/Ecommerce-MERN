@@ -3,11 +3,12 @@ import {
   addToCart,
   deleteCartItem,
   fetchItemsByUserId,
+  resetCart,
   updateCartItem,
 } from "./cartAPI";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
-import { CartItem } from "../models/CartItem";
+import { CartItem, CartItemWithoutId } from "../../models/CartItem";
 
 // Define the shape of the state
 export interface CartState {
@@ -23,7 +24,7 @@ const initialState: CartState = {
 
 export const addToCartAsync = createAsyncThunk<
   CartItem,
-  CartItem,
+  CartItemWithoutId,
   { rejectValue: string }
 >("cart/addToCart", async (item, thunkAPI) => {
   try {
@@ -67,6 +68,18 @@ export const deleteCartItemAsync = createAsyncThunk<
   try {
     const response = await deleteCartItem(id);
     return response.data as { id: string };
+  } catch (error) {
+    return thunkAPI.rejectWithValue("Failed to update cartitem");
+  }
+});
+export const resetCartAsync = createAsyncThunk<
+  string,
+  string,
+  { rejectValue: string }
+>("cart/resetCart", async (userId, thunkAPI) => {
+  try {
+    const response = await resetCart(userId);
+    return response.status;
   } catch (error) {
     return thunkAPI.rejectWithValue("Failed to update cartitem");
   }
@@ -123,7 +136,14 @@ export const cartSlice = createSlice({
           );
           state.items.splice(index, 1);
         }
-      );
+      )
+      .addCase(resetCartAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(resetCartAsync.fulfilled, (state) => {
+        state.status = "idle";
+        state.items = [];
+      });
   },
 });
 

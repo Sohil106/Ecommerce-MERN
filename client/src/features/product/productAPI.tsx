@@ -1,4 +1,4 @@
-import { Product } from "../models/Product";
+import { Product, ProductWithoutId } from "../../models/Product";
 import { FilterOption } from "./components/ProductList";
 
 export interface ProductResponse {
@@ -49,11 +49,11 @@ export function fetchProductsByFilters(
       const response = await fetch(
         `http://localhost:8080/products?${queryString}`
       );
-      const totalItemsHeader = response.headers.get("X-Total-Count");
-      const totalItems = totalItemsHeader ? parseInt(totalItemsHeader, 10) : 0;
-      const products: Product[] = await response.json();
+      const productsData: { data: Product[]; items: number } =
+        await response.json();
+      const products = productsData.data;
 
-      resolve({ data: { products, totalItems } });
+      resolve({ data: { products: products, totalItems: productsData.items } });
     } catch (error) {
       reject(error);
     }
@@ -75,10 +75,39 @@ export function fetchBrands() {
     const data = await response.json();
     resolve({ data });
   });
+  0;
+}
+
+export function creatProduct(product: ProductWithoutId) {
+  return new Promise<{ data: Product }>(async (resolve) => {
+    const response = await fetch("http://localhost:8080/products/", {
+      method: "POST",
+      body: JSON.stringify(product),
+      headers: { "content-type": "application/json" },
+    });
+    const data = await response.json();
+    // TODO : on sever it will only return relevent information(not password)
+    resolve({ data });
+  });
+}
+
+export function updateProduct(product: Product) {
+  return new Promise<{ data: Product }>(async (resolve) => {
+    const response = await fetch(
+      `http://localhost:8080/products/${product.id}`,
+      {
+        method: "PATCH",
+        body: JSON.stringify(product),
+        headers: { "content-type": "application/json" },
+      }
+    );
+    const data = await response.json();
+    resolve({ data });
+  });
 }
 
 export function fetchProductById(id: string) {
-  return new Promise<{ data: Product[] }>(async (resolve) => {
+  return new Promise<{ data: Product }>(async (resolve) => {
     //TODO: we will not hard code server URL here
     const response = await fetch(`http://localhost:8080/products/${id}`);
     const data = await response.json();
