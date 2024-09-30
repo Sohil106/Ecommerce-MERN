@@ -7,7 +7,6 @@ import {
   OrdersResponse,
   updateOrder,
 } from "./orderAPI";
-import { fetchAllProducts } from "../product/productAPI";
 import { Order } from "../../models/Order";
 
 export interface OrderState {

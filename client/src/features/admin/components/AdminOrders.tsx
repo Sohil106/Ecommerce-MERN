@@ -7,16 +7,25 @@ import {
   useSelectorOrderState,
 } from "../../order/orderSlice";
 import { AppDispatch } from "../../store";
-import { EyeIcon, PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { EyeIcon, PencilIcon } from "@heroicons/react/24/outline";
 import { Order } from "../../../models/Order";
 import Pagination from "../../common/Pagination";
+import {
+  BsCaretUp,
+  BsCaretDown,
+  BsCaretUpFill,
+  BsCaretDownFill,
+} from "react-icons/bs";
 
 const AdminOrders = () => {
+  interface SortOption {
+    [key: string]: string;
+  }
   const dispatch = useDispatch<AppDispatch>();
   const [page, setPage] = useState<number>(1);
   const [editOrderId, setEditOrderId] = useState<string>("");
   const { orders, totalOrders } = useSelectorOrderState();
-  const [sort, setSort] = useState({});
+  const [sort, setSort] = useState<SortOption>({ _sort: "", _order: "" });
 
   useEffect(() => {
     const pagination = { _page: page, _per_page: ITEMS_PER_PAGE };
@@ -61,13 +70,23 @@ const AdminOrders = () => {
   //   [key: string]: string[];
   // };
 
-  interface SortOption {
-    sort: string;
-    order: string;
-  }
-  const handleSort = (sortOptions: SortOption) => {
-    const sort = { _sort: sortOptions.sort, _order: sortOptions.order };
-    setSort(sort);
+  const handleSort = (field: string) => {
+    // const sort = { _sort: sortOptions.sort, _order: sortOptions.order };
+
+    setSort((prevSort) => ({
+      _sort:
+        prevSort._order === "asc"
+          ? `-${field}`
+          : prevSort._order === "desc"
+          ? ""
+          : field,
+      _order:
+        prevSort._order === "asc"
+          ? "desc"
+          : prevSort._order === "desc"
+          ? ""
+          : "asc",
+    }));
   };
   return (
     <>
@@ -78,20 +97,29 @@ const AdminOrders = () => {
               <table className="min-w-max w-full table-auto">
                 <thead>
                   <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                    <th
-                      className="py-3 px-6 text-left cursor-pointer"
-                      onClick={() =>
-                        handleSort({
-                          sort: sort._order === "asc" ? "-id" : "id",
-                          order: sort._order === "asc" ? "desc" : "asc",
-                        })
-                      }
-                    >
-                      Order #
+                    <th className="py-3 px-6 text-left flex gap-4 items-center">
+                      <span>Order #</span>
+                      <span
+                        onClick={() => handleSort("id")}
+                        className="cursor-pointer"
+                      >
+                        <span className="flex flex-col gap-0">
+                          {sort._order === "asc" ? (
+                            <BsCaretUpFill className="w-6 h-6 p-0 my-[-4.5px]" />
+                          ) : (
+                            <BsCaretUp className="w-6 h-6 p-0 my-[-4.5px]" />
+                          )}
+                          {sort._order === "desc" ? (
+                            <BsCaretDownFill className="w-6 h-6 p-0 my-[-4.5px]" />
+                          ) : (
+                            <BsCaretDown className="w-6 h-6 p-0 my-[-4.5px]" />
+                          )}
+                        </span>
+                      </span>
                     </th>
                     <th className="py-3 px-6 text-left">Items</th>
-                    <th className="py-3 px-6 text-left">Total</th>
-                    <th className="py-3 px-6 text-center">Shipping Address</th>
+                    <th className="py-3 px-6 text-left">Shipping Address</th>
+                    <th className="py-3 px-6 text-center">Total</th>
                     <th className="py-3 px-6 text-center">Status</th>
                     <th className="py-3 px-6 text-center">Actions</th>
                   </tr>

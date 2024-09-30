@@ -1,5 +1,4 @@
 import { CartItem, CartItemWithoutId } from "../models/CartItem";
-import { Order } from "../models/Order";
 import { Product, ProductWithoutId } from "../models/Product";
 
 export const ITEMS_PER_PAGE = 10;

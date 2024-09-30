@@ -8,7 +8,7 @@ import {
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AppDispatch } from "../../store";
-import { addToCartAsync } from "../../cart/cartSlice";
+import { addToCartAsync, useSelectorCartState } from "../../cart/cartSlice";
 import { useSelectorAuthState } from "../../auth/authSlice";
 import { discountedPrice } from "../../../constants/constants";
 
@@ -96,6 +96,7 @@ const ProductDetail = () => {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
   const { product } = useSelectorProductState();
+  const { items } = useSelectorCartState();
   const dispatch = useDispatch<AppDispatch>();
   const { id } = useParams<{ id?: string }>();
   const { loggedInUser } = useSelectorAuthState();
@@ -118,13 +119,20 @@ const ProductDetail = () => {
   const handleCart = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (loggedInUser) {
-      const { id, ...productWithoutId } = product;
-      const newItem = {
-        ...productWithoutId,
-        quantity: 1,
-        user: loggedInUser.id,
-      };
-      await dispatch(addToCartAsync(newItem));
+      if (items.findIndex((item) => item.productId === product.id) < 0) {
+        const { id, ...productWithoutId } = product;
+        const newItem = {
+          ...productWithoutId,
+          productId: product.id,
+          quantity: 1,
+          user: loggedInUser.id,
+        };
+        await dispatch(addToCartAsync(newItem));
+      } else {
+        alert("already added to cart");
+      }
+    } else {
+      alert("user not Found");
     }
   };
   return (
