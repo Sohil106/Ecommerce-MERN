@@ -7,7 +7,7 @@ import {
   OrdersResponse,
   updateOrder,
 } from "./orderAPI";
-import { Order } from "../../models/Order";
+import { Order, OrderWithoutId } from "../../models/Order";
 
 export interface OrderState {
   orders: Order[];
@@ -27,8 +27,8 @@ const initialState: OrderState = {
 //we may need more info of current order
 
 export const createOrderAsync = createAsyncThunk<
-  any,
-  any,
+  Order,
+  OrderWithoutId,
   { rejectValue: string }
 >("order/createOrder", async (order, thunkAPI) => {
   try {
@@ -40,8 +40,8 @@ export const createOrderAsync = createAsyncThunk<
 });
 
 export const updateOrderAsync = createAsyncThunk<
-  any,
-  any,
+  Order,
+  Order,
   { rejectValue: string }
 >("order/updateOrder", async (order, thunkAPI) => {
   try {
@@ -81,7 +81,7 @@ export const orderSlice = createSlice({
       })
       .addCase(
         createOrderAsync.fulfilled,
-        (state, action: PayloadAction<any>) => {
+        (state, action: PayloadAction<Order>) => {
           state.status = "idle";
           state.orders.push(action.payload);
           state.currentOrder = action.payload;
@@ -92,7 +92,7 @@ export const orderSlice = createSlice({
       })
       .addCase(
         updateOrderAsync.fulfilled,
-        (state, action: PayloadAction<any>) => {
+        (state, action: PayloadAction<Order>) => {
           state.status = "idle";
           const index = state.orders.findIndex(
             (order) => order.id === action.payload.id

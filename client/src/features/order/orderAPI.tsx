@@ -1,11 +1,11 @@
-import { Order } from "../../models/Order";
+import { Order, OrderWithoutId } from "../../models/Order";
 export interface OrdersResponse {
   orders: Order[];
   totalOrders: number;
 }
 
-export function createOrder(order: any) {
-  return new Promise<{ data: any }>(async (resolve) => {
+export function createOrder(order: OrderWithoutId) {
+  return new Promise<{ data: Order }>(async (resolve) => {
     const response = await fetch("http://localhost:8080/orders", {
       method: "POST",
       body: JSON.stringify(order),
@@ -17,8 +17,8 @@ export function createOrder(order: any) {
   });
 }
 
-export function updateOrder(order: any) {
-  return new Promise<{ data: any }>(async (resolve) => {
+export function updateOrder(order: Order) {
+  return new Promise<{ data: Order }>(async (resolve) => {
     const response = await fetch(`http://localhost:8080/orders/${order.id}`, {
       method: "PATCH",
       body: JSON.stringify(order),

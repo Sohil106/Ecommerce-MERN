@@ -12226,14 +12226,14 @@
       "password": "Sohil@2002",
       "addresses": [
         {
-          "country": "Canada",
+          "country": "India",
           "name": "sohil vekariya",
           "email": "20itsoh002@ldce.ac.in",
-          "phone": "8758948010",
           "street": "Vekariya Street, Amarnagar",
           "city": "Jetpur",
           "state": "Gujarat",
-          "zipcode": "360485"
+          "zipcode": "360485",
+          "phone": "8758948010"
         },
         {
           "country": "India",
@@ -12254,6 +12254,16 @@
           "city": "Mexico",
           "state": "Mexicos",
           "zipcode": "122435"
+        },
+        {
+          "country": "India",
+          "name": "smit kakadiya",
+          "email": "smitkakadiya123@gmail.com",
+          "street": "Shubh Darshan, apartment",
+          "city": "Surat",
+          "state": "Gujarat",
+          "zipcode": "21343",
+          "phone": "8932412345"
         }
       ],
       "role": "user"

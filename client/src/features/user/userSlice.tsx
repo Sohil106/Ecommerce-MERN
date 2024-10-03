@@ -7,18 +7,19 @@ import {
   fetchLoggedinUserOrders,
   updateUser,
 } from "./userAPI";
+import { Order } from "../../models/Order";
 
 // Define the shape of the state
 export interface UserState {
-  userInfo: any;
-  userOrders: any[];
+  userInfo: LoggedinUser;
+  userOrders: Order[];
   status: "idle" | "loading" | "failed";
   error: string | null;
 }
 
 // Initial state with typed structure
 const initialState: UserState = {
-  userInfo: null,
+  userInfo: { id: "", email: "", password: "", addresses: [], role: "" },
   userOrders: [],
   status: "idle",
   error: null,
@@ -38,7 +39,7 @@ export const fetchLoggedinUserAsync = createAsyncThunk<
 });
 
 export const fetchLoggedinUserOrdersAsync = createAsyncThunk<
-  any,
+  Order[],
   string,
   { rejectValue: string }
 >("user/fetchLoggedinUserOrders", async (userId, thunkAPI) => {
@@ -51,8 +52,8 @@ export const fetchLoggedinUserOrdersAsync = createAsyncThunk<
 });
 
 export const updateUserAsync = createAsyncThunk<
-  any,
-  any,
+  LoggedinUser,
+  LoggedinUser,
   { rejectValue: string }
 >("user/updateUser", async (userData, thunkAPI) => {
   try {
@@ -85,7 +86,7 @@ export const userSlice = createSlice({
       })
       .addCase(
         fetchLoggedinUserOrdersAsync.fulfilled,
-        (state, action: PayloadAction<any[]>) => {
+        (state, action: PayloadAction<Order[]>) => {
           state.status = "idle";
           //this info can be different or more from logged-in User info
           state.userOrders = action.payload;
@@ -96,7 +97,7 @@ export const userSlice = createSlice({
       })
       .addCase(
         updateUserAsync.fulfilled,
-        (state, action: PayloadAction<any>) => {
+        (state, action: PayloadAction<LoggedinUser>) => {
           state.status = "idle";
           state.userInfo = action.payload;
         }

@@ -25,14 +25,35 @@ const user = {
   imageUrl:
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
+
+interface NavigationItem {
+  name: string;
+  link: string;
+  current: boolean;
+  user: boolean;
+  admin: boolean;
+}
 const navigation = [
-  { name: "Products", link: `${AllRoutes.Home}`, current: true, user: true },
-  { name: "Products", link: `${AllRoutes.Admin}`, current: false, admin: true },
+  {
+    name: "Products",
+    link: `${AllRoutes.Home}`,
+    current: true,
+    user: true,
+    admin: false,
+  },
+  {
+    name: "Products",
+    link: `${AllRoutes.Admin}`,
+    current: false,
+    admin: true,
+    user: false,
+  },
   {
     name: "Orders",
     link: `${AllRoutes.AdminOrders}`,
     current: false,
     admin: true,
+    user: false,
   },
   //   { name: "Projects", href: "#", current: false },
   //   { name: "Calendar", href: "#", current: false },
@@ -74,8 +95,8 @@ const Navbar = ({ children }: ChildrenProps) => {
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
-                    {navigation.map((item: any) =>
-                      item[loggedInUser ? loggedInUser.role : "user"] ? (
+                    {navigation.map((item: NavigationItem) =>
+                      item[loggedInUser?.role as keyof NavigationItem] ? (
                         <Link
                           key={item.name}
                           to={item.link}
@@ -162,8 +183,8 @@ const Navbar = ({ children }: ChildrenProps) => {
 
           <DisclosurePanel className="md:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-              {navigation.map((item: any) =>
-                item[loggedInUser ? loggedInUser.role : "user"] ? (
+              {navigation.map((item: NavigationItem) =>
+                item[loggedInUser?.role as keyof NavigationItem] ? (
                   <Link
                     key={item.name}
                     to={item.link}
