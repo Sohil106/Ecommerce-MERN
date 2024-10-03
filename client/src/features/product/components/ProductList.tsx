@@ -33,6 +33,9 @@ import { Product } from "../../../models/Product";
 import { discountedPrice, ITEMS_PER_PAGE } from "../../../constants/constants";
 import Pagination from "../../common/Pagination";
 
+import "react-loading-skeleton/dist/skeleton.css";
+import ProductListSKE from "../../../skeletons/ProductListSKE";
+
 const sortOptions = [
   { name: "Best Rating", sort: "-rating", order: "desc", current: false },
   { name: "Price: Low to High", sort: "price", order: "asc", current: false },
@@ -414,6 +417,7 @@ interface ProductGridProps {
 }
 function ProductGrid({ products }: ProductGridProps) {
   const navigate = useNavigate();
+  const { status } = useSelectorProductState();
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-0 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
@@ -422,6 +426,11 @@ function ProductGrid({ products }: ProductGridProps) {
       </h2> */}
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+          {status === "loading"
+            ? Array.from({ length: 10 }).map((el, index) => (
+                <ProductListSKE key={index} />
+              ))
+            : null}
           {products.map((product) => (
             <div
               key={product.id}

@@ -24,6 +24,10 @@ import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
 import AdminProductDetailPage from "./pages/admin/product-detail/AdminProductDetailPage";
 import AdminProductFormPage from "./pages/admin/product-form/AdminProductFormPage";
 import AdminOrdersPage from "./pages/admin/admin-order/AdminOrdersPage";
+import AlertProviderWrapper from "./AlertProviderWrapper";
+import { positions, transitions } from "react-alert";
+import { useLocation } from "react-router-dom";
+import { resetProduct, resetStatus } from "./features/product/productSlice";
 
 const router = createBrowserRouter([
   {
@@ -147,15 +151,29 @@ const router = createBrowserRouter([
 function App() {
   const dispatch = useDispatch<AppDispatch>();
   const { loggedInUser } = useSelectorAuthState();
+
   useEffect(() => {
     if (loggedInUser) {
       dispatch(fetchItemsByUserIdAsync(loggedInUser.id));
       dispatch(fetchLoggedinUserAsync(loggedInUser.id));
     }
   }, [dispatch, loggedInUser?.id]);
+
+  useEffect(() => {
+    router.subscribe(() => {
+      dispatch(resetStatus());
+      dispatch(resetProduct());
+    });
+  }, [dispatch]);
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <AlertProviderWrapper
+        timeout={5000}
+        position={positions.BOTTOM_LEFT}
+        transition={transitions.FADE}
+      >
+        <RouterProvider router={router} />
+      </AlertProviderWrapper>
 
       {/* Link mustr be inside the Provider */}
     </div>

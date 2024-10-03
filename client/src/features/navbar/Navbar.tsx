@@ -17,6 +17,7 @@ import { ChildrenProps } from "../../models/Modal";
 import { AllRoutes } from "../../constants/constants";
 import { useSelectorCartState } from "../cart/cartSlice";
 import { useSelectorAuthState } from "../auth/authSlice";
+import logo from "../../assets/logo.png";
 
 const user = {
   name: "Tom Cook",
@@ -68,17 +69,8 @@ const Navbar = ({ children }: ChildrenProps) => {
               <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <Link to="/">
-                    <img
-                      alt="Your Company"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                      className="h-8 w-8"
-                    />
+                    <img alt="Your Company" src={logo} className="h-8 w-8" />
                   </Link>
-                  {/* <img
-                    alt="Your Company"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    className="h-8 w-8"
-                  /> */}
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">

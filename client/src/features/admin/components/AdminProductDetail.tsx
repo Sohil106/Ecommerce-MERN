@@ -34,7 +34,7 @@ const highlights = [
   "Ultra-soft 100% cotton",
 ];
 
-function classNames(...classes: any) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
@@ -69,6 +69,7 @@ const AdminProductDetail = () => {
         ...productWithoutId,
         quantity: 1,
         user: loggedInUser.id,
+        productId: id,
       };
       await dispatch(addToCartAsync(newItem));
     }

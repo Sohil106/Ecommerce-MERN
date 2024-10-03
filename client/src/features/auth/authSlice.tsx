@@ -38,7 +38,7 @@ export const checkUserAsync = createAsyncThunk<
 >("user/checkUser", async (loginInfo, thunkAPI) => {
   try {
     const response = await checkUser(loginInfo);
-    return response.data as LoggedinUser;
+    return response.data;
   } catch (error) {
     if (typeof error === "object" && error !== null && "message" in error) {
       return thunkAPI.rejectWithValue((error as ErrorMessage).message);

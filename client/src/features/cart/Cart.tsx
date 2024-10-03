@@ -2,14 +2,12 @@
 
 import { Link, Navigate } from "react-router-dom";
 import { AllRoutes, discountedPrice } from "../../constants/constants";
-import {
-  deleteCartItemAsync,
-  updateCartItemAsync,
-  useSelectorCartState,
-} from "./cartSlice";
+import { updateCartItemAsync, useSelectorCartState } from "./cartSlice";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store";
 import { CartItem } from "../../models/CartItem";
+import Modal from "../common/Modal";
+import { useState } from "react";
 
 // const products = [
 //   {
@@ -42,6 +40,8 @@ import { CartItem } from "../../models/CartItem";
 const Cart = () => {
   const { items } = useSelectorCartState();
   const dispatch = useDispatch<AppDispatch>();
+  const [open, setOpen] = useState(false);
+  const [deleteId, setDeleteId] = useState("");
   const totalAmount =
     Math.round(
       items.reduce(
@@ -58,11 +58,21 @@ const Cart = () => {
     await dispatch(updateCartItemAsync({ ...item, quantity: +e.target.value }));
   };
 
-  const handleRemove = async (id: string) => {
-    await dispatch(deleteCartItemAsync(id));
+  const handleRemoveModal = async (id: string) => {
+    setDeleteId(id);
+    setOpen(true);
   };
   return (
     <>
+      <Modal
+        open={open}
+        setOpen={setOpen}
+        deleteId={deleteId}
+        title="Delete cart item"
+        message="Are you sure want to delete"
+        dangerOption="Delete"
+        cancelOption="Cancel"
+      />
       {!items.length && (
         <Navigate to={AllRoutes.Home} replace={true}></Navigate>
       )}
@@ -130,7 +140,9 @@ const Cart = () => {
                         <button
                           type="button"
                           className="font-medium text-indigo-600 hover:text-indigo-500"
-                          onClick={() => handleRemove(product.id.toString())}
+                          onClick={() =>
+                            handleRemoveModal(product.id.toString())
+                          }
                         >
                           Remove
                         </button>

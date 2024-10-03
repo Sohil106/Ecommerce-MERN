@@ -61,7 +61,7 @@ const initialState: ProductState = {
   brands: [],
   categories: [],
   totalItems: 0,
-  status: "idle",
+  status: "loading",
   error: null,
 };
 
@@ -178,6 +178,9 @@ export const productSlice = createSlice({
     resetProduct: (state) => {
       state.product = initialProduct;
     },
+    resetStatus: (state) => {
+      state.status = "loading";
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -288,7 +291,7 @@ export const productSlice = createSlice({
 });
 
 // Export actions and selectors
-export const { resetProduct } = productSlice.actions;
+export const { resetProduct, resetStatus } = productSlice.actions;
 
 export const useSelectorProductState = () => {
   const productState = useSelector((state: RootState) => state.product);

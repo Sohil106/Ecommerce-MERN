@@ -11,6 +11,8 @@ import { AppDispatch } from "../../store";
 import { addToCartAsync, useSelectorCartState } from "../../cart/cartSlice";
 import { useSelectorAuthState } from "../../auth/authSlice";
 import { discountedPrice } from "../../../constants/constants";
+import { useAlert } from "react-alert";
+import ProductDetailSKE from "../../../skeletons/ProductDetailSKE";
 
 // const product = {
 //   name: "Basic Tee 6-Pack",
@@ -95,11 +97,12 @@ function classNames(...classes: any) {
 const ProductDetail = () => {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
-  const { product } = useSelectorProductState();
+  const { product, status } = useSelectorProductState();
   const { items } = useSelectorCartState();
   const dispatch = useDispatch<AppDispatch>();
   const { id } = useParams<{ id?: string }>();
   const { loggedInUser } = useSelectorAuthState();
+  const alert = useAlert();
 
   useEffect(() => {
     if (id) {
@@ -128,15 +131,18 @@ const ProductDetail = () => {
           user: loggedInUser.id,
         };
         await dispatch(addToCartAsync(newItem));
+        //TODO : it will be based on server response of backend
+        alert.success("Item added successfully");
       } else {
-        alert("already added to cart");
+        alert.error("already added to cart");
       }
     } else {
-      alert("user not Found");
+      alert.error("user not Found");
     }
   };
   return (
     <div className="bg-white">
+      {status === "loading" && <ProductDetailSKE />}
       <div className="pt-6">
         <nav aria-label="Breadcrumb">
           <ol
