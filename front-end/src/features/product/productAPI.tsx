@@ -49,11 +49,13 @@ export function fetchProductsByFilters(
       const response = await fetch(
         `http://localhost:8080/products?${queryString}`
       );
+      // console.log(await response.json());
       const productsData: { data: Product[]; items: number } =
         await response.json();
-      const products = productsData.data;
 
-      resolve({ data: { products: products, totalItems: productsData.items } });
+      resolve({
+        data: { products: productsData.data, totalItems: productsData.items },
+      });
     } catch (error) {
       reject(error);
     }

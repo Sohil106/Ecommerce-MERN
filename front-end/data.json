@@ -32,9 +32,9 @@
       },
       "images": [
         "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
-        null,
-        null,
-        null
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
+        "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
     },
@@ -11782,8 +11782,8 @@
       "id": "d443"
     },
     {
-      "value": "womens-jewellery",
-      "label": "womens jewellery",
+        "value": "womens-jewellery",
+        "label": "womens jewellery",
       "checked": false,
       "id": "1623"
     },
@@ -12102,8 +12102,8 @@
       "id": "576f"
     },
     {
-      "value": "Chrysler",
-      "label": "Chrysler",
+        "value": "Chrysler",
+        "label": "Chrysler",
       "checked": false,
       "id": "fa77"
     },

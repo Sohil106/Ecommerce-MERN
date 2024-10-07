@@ -158,14 +158,27 @@ export const creatProductAsync = createAsyncThunk<
   }
 });
 
+// export const updateProductAsync = createAsyncThunk<
+//   Product,
+//   Product,
+//   { rejectValue: string }
+// >("/updateProduct", async (product, thunkAPI) => {
+//   try {
+//     const response = await updateProduct(product);
+//     return response.data;
+//   } catch (error) {
+//     return thunkAPI.rejectWithValue("Failed to update product");
+//   }
+// });
+
 export const updateProductAsync = createAsyncThunk<
   Product,
   Product,
   { rejectValue: string }
 >("/updateProduct", async (product, thunkAPI) => {
   try {
-    const response = await updateProduct(product);
-    return response.data;
+    const respomse = await updateProduct(product);
+    return respomse.data;
   } catch (error) {
     return thunkAPI.rejectWithValue("Failed to update product");
   }
