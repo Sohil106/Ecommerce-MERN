@@ -1,4 +1,8 @@
-import { CartItem, CartItemWithoutId } from "../../models/CartItem";
+import {
+  CartItem,
+  CartItemForUpdate,
+  CartItemWithoutId,
+} from "../../models/CartItem";
 
 export function addToCart(item: CartItemWithoutId) {
   return new Promise<{ data: CartItem }>(async (resolve) => {
@@ -21,7 +25,7 @@ export function fetchItemsByUserId(userId: string) {
     resolve({ data });
   });
 }
-export function updateCartItem(item: CartItem) {
+export function updateCartItem(item: CartItemForUpdate) {
   return new Promise<{ data: CartItem }>(async (resolve) => {
     const response = await fetch(`http://localhost:8080/cart/${item.id}`, {
       method: "PATCH",

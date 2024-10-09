@@ -1,13 +1,19 @@
-import { Product, ProductWithoutId } from "./Product";
+import { Product } from "./Product";
 
-export interface CartItem extends Product {
+export interface CartItem {
+  id: string;
   quantity: number;
   user: string;
-  productId: string;
+  product: Product;
 }
 
-export interface CartItemWithoutId extends ProductWithoutId {
+export interface CartItemWithoutId {
   quantity: number;
   user: string;
-  productId: string;
+  product: string;
+}
+
+export interface CartItemForUpdate {
+  id: string;
+  quantity: number;
 }

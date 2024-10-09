@@ -8,7 +8,11 @@ import {
 } from "./cartAPI";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
-import { CartItem, CartItemWithoutId } from "../../models/CartItem";
+import {
+  CartItem,
+  CartItemForUpdate,
+  CartItemWithoutId,
+} from "../../models/CartItem";
 
 // Define the shape of the state
 export interface CartState {
@@ -50,7 +54,7 @@ export const fetchItemsByUserIdAsync = createAsyncThunk<
 
 export const updateCartItemAsync = createAsyncThunk<
   CartItem,
-  CartItem,
+  CartItemForUpdate,
   { rejectValue: string }
 >("cart/updateCartItem", async (item, thunkAPI) => {
   try {

@@ -7,7 +7,7 @@ const router = express.Router();
 router
   .post("/", productController.createProduct)
   .get("/", productController.fetchAllProducts)
-  .patch("/", productController.updateProduct)
-  .get("/:id", productController.fetchAllProductById);
+  .patch("/:id", productController.updateProduct)
+  .get("/:id", productController.fetchProductById);
 
 exports.router = router;

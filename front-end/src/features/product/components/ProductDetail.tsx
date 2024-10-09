@@ -122,11 +122,9 @@ const ProductDetail = () => {
   const handleCart = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (loggedInUser) {
-      if (items.findIndex((item) => item.productId === product.id) < 0) {
-        const { id, ...productWithoutId } = product;
+      if (items.findIndex((item) => item.product.id === product.id) < 0) {
         const newItem = {
-          ...productWithoutId,
-          productId: product.id,
+          product: product.id,
           quantity: 1,
           user: loggedInUser.id,
         };
@@ -245,7 +243,7 @@ const ProductDetail = () => {
             <h2 className="sr-only">Product information</h2>
             <div className="flex items-center text-3xl gap-2">
               <p className="tracking-tight text-gray-900">
-                ${discountedPrice(product)}
+                ${discountedPrice(product.price, product.discountPercentage)}
               </p>
               <p className=" line-through text-gray-400">${product.price}</p>
             </div>

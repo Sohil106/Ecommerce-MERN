@@ -7,6 +7,7 @@ import {
 } from "../userSlice";
 import { AppDispatch } from "../../store";
 import { discountedPrice } from "../../../constants/constants";
+import { CartItem } from "../../../models/CartItem";
 
 const UserOrders = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -34,12 +35,12 @@ const UserOrders = () => {
 
               <div className="flow-root">
                 <ul role="list" className="-my-6  ">
-                  {userOrder.items.map((product: any) => (
-                    <li key={product.id} className="flex py-6">
+                  {userOrder.items.map((item: CartItem) => (
+                    <li key={item.id} className="flex py-6">
                       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                         <img
-                          alt={product.title}
-                          src={product.thumbnail}
+                          alt={item.product.title}
+                          src={item.product.thumbnail}
                           className="h-full w-full object-cover object-center"
                         />
                       </div>
@@ -48,17 +49,25 @@ const UserOrders = () => {
                         <div>
                           <div className="flex justify-between text-base font-medium text-gray-900">
                             <h3>
-                              <a href={product.thumbnail}>{product.title}</a>
+                              <a href={item.product.thumbnail}>
+                                {item.product.title}
+                              </a>
                             </h3>
                             <div className="">
-                              <p className="">${discountedPrice(product)}</p>
+                              <p className="">
+                                $
+                                {discountedPrice(
+                                  item.product.price,
+                                  item.product.discountPercentage
+                                )}
+                              </p>
                               <p className="text-sm font-medium line-through text-gray-400">
-                                ${product.price}
+                                ${item.product.price}
                               </p>
                             </div>
                           </div>
                           <p className="mt-1 text-sm text-gray-500">
-                            {product.brand}
+                            {item.product.brand}
                           </p>
                         </div>
                         <div className="flex flex-1 items-end justify-between text-sm">
@@ -67,7 +76,7 @@ const UserOrders = () => {
                               htmlFor="quantity"
                               className="inline mr-5 text-sm font-medium leading-6 text-gray-900"
                             >
-                              Qty:{product.quantity}
+                              Qty:{item.quantity}
                             </label>
                           </div>
                         </div>

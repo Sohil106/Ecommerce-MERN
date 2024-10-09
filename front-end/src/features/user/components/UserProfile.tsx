@@ -354,7 +354,7 @@ const UserProfile = () => {
           )}
         </div>
 
-        {userInfo?.addresses.length > 0 && (
+        {userInfo?.addresses && userInfo?.addresses.length > 0 && (
           <div className="border-gray-200 px-4 pb-6 sm:px-6">
             <p className="mt-0.5 text-sm text-gray-500  pt-4">
               Your Addresses :

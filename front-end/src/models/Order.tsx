@@ -14,3 +14,17 @@ export interface OrderWithoutId {
   selectedAddress: Address;
   status: string;
 }
+
+export interface OrderToAdd {
+  items: CartItem[];
+  totalAmount: number;
+  totalItems: number;
+  user: string;
+  paymentMethod: string;
+  selectedAddress: Address;
+  status: string;
+}
+
+export interface OrderToUpdate extends OrderToAdd {
+  id: string;
+}

@@ -50,7 +50,10 @@ const Checkout = () => {
   const totalAmount =
     Math.round(
       items.reduce(
-        (amount, item) => discountedPrice(item) * item.quantity + amount,
+        (amount, item) =>
+          discountedPrice(item.product.price, item.product.discountPercentage) *
+            item.quantity +
+          amount,
         0
       ) * 100
     ) / 100;
@@ -61,7 +64,9 @@ const Checkout = () => {
     e: React.ChangeEvent<HTMLSelectElement>,
     item: CartItem
   ) => {
-    await dispatch(updateCartItemAsync({ ...item, quantity: +e.target.value }));
+    await dispatch(
+      updateCartItemAsync({ id: item.id, quantity: +e.target.value })
+    );
   };
 
   const handleRemove = async (id: string) => {
@@ -122,7 +127,7 @@ const Checkout = () => {
         items,
         totalAmount,
         totalItems,
-        user: userInfo,
+        user: userInfo.id,
         paymentMethod,
         selectedAddress,
         status: "pending",
@@ -519,12 +524,12 @@ const Checkout = () => {
                     role="list"
                     className="-my-6 divide-y divide-gray-200 border-b-[1px] border-gray-200"
                   >
-                    {items.map((product) => (
-                      <li key={product.id} className="flex py-6">
+                    {items.map((item) => (
+                      <li key={item.id} className="flex py-6">
                         <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                           <img
-                            alt={product.title}
-                            src={product.thumbnail}
+                            alt={item.product.title}
+                            src={item.product.thumbnail}
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
@@ -533,17 +538,25 @@ const Checkout = () => {
                           <div>
                             <div className="flex justify-between text-base font-medium text-gray-900">
                               <h3>
-                                <a href={product.thumbnail}>{product.title}</a>
+                                <a href={item.product.thumbnail}>
+                                  {item.product.title}
+                                </a>
                               </h3>
                               <div className="">
-                                <p className="">${discountedPrice(product)}</p>
+                                <p className="">
+                                  $
+                                  {discountedPrice(
+                                    item.product.price,
+                                    item.product.discountPercentage
+                                  )}
+                                </p>
                                 <p className="text-sm font-medium line-through text-gray-400">
-                                  ${product.price}
+                                  ${item.product.price}
                                 </p>
                               </div>
                             </div>
                             <p className="mt-1 text-sm text-gray-500">
-                              {product.brand}
+                              {item.product.brand}
                             </p>
                           </div>
                           <div className="flex flex-1 items-end justify-between text-sm">
@@ -557,8 +570,8 @@ const Checkout = () => {
                               <select
                                 name="quantity"
                                 id="quantity"
-                                onChange={(e) => handleQuantity(e, product)}
-                                value={product.quantity}
+                                onChange={(e) => handleQuantity(e, item)}
+                                value={item.quantity}
                               >
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -572,9 +585,7 @@ const Checkout = () => {
                               <button
                                 type="button"
                                 className="font-medium text-indigo-600 hover:text-indigo-500"
-                                onClick={() =>
-                                  handleRemove(product.id.toString())
-                                }
+                                onClick={() => handleRemove(item.id.toString())}
                               >
                                 Remove
                               </button>

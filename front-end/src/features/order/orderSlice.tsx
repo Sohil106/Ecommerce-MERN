@@ -7,7 +7,7 @@ import {
   OrdersResponse,
   updateOrder,
 } from "./orderAPI";
-import { Order, OrderWithoutId } from "../../models/Order";
+import { Order, OrderToAdd, OrderToUpdate, OrderWithoutId } from "../../models/Order";
 
 export interface OrderState {
   orders: Order[];
@@ -28,7 +28,7 @@ const initialState: OrderState = {
 
 export const createOrderAsync = createAsyncThunk<
   Order,
-  OrderWithoutId,
+  OrderToAdd,
   { rejectValue: string }
 >("order/createOrder", async (order, thunkAPI) => {
   try {
@@ -41,7 +41,7 @@ export const createOrderAsync = createAsyncThunk<
 
 export const updateOrderAsync = createAsyncThunk<
   Order,
-  Order,
+  OrderToUpdate,
   { rejectValue: string }
 >("order/updateOrder", async (order, thunkAPI) => {
   try {

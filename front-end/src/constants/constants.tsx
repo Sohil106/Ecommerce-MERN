@@ -22,12 +22,10 @@ export const AllRoutes = {
 };
 
 export const discountedPrice = (
-  product: Product | ProductWithoutId | CartItem | CartItemWithoutId
+  price: number,
+  disCountetPercentage: number
 ) => {
   {
-    return (
-      Math.round(product.price * (1 - product.discountPercentage / 100) * 100) /
-      100
-    );
+    return Math.round(price * (1 - disCountetPercentage / 100) * 100) / 100;
   }
 };

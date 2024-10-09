@@ -1,8 +1,9 @@
+import { ErrorResponse } from "react-router-dom";
 import { ErrorMessage, LoggedinUser, RegisterUser } from "../../models/Modal";
 
 export function creatUser(userData: RegisterUser) {
   return new Promise<{ data: LoggedinUser }>(async (resolve) => {
-    const response = await fetch("http://localhost:8080/users", {
+    const response = await fetch("http://localhost:8080/auth/signup", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: { "content-type": "application/json" },
@@ -15,15 +16,21 @@ export function creatUser(userData: RegisterUser) {
 
 export function checkUser(loginInfo: LoggedinUser) {
   return new Promise<{ data: LoggedinUser }>(async (resolve, reject) => {
-    const email = loginInfo.email;
-    const password = loginInfo.password;
-    const response = await fetch(`http://localhost:8080/users?email=${email}`);
-    const data = await response.json();
-    if (data.length) {
-      if (password === data[0].password) resolve({ data: data[0] });
-      else reject({ message: "Invalid Credentials" } as ErrorMessage);
-    } else {
-      reject({ message: "Invalid Credentials" } as ErrorMessage);
+    try {
+      const response = await fetch(`http://localhost:8080/auth/login`, {
+        method: "POST",
+        body: JSON.stringify(loginInfo),
+        headers: { "content-type": "application/json" },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        resolve({ data });
+      } else {
+        const err: ErrorMessage = await response.json();
+        reject(reject(err));
+      }
+    } catch (err) {
+      reject({ err });
     }
   });
 }

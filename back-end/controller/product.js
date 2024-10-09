@@ -7,13 +7,12 @@ exports.createProduct = async (req, res) => {
     const product = new Product(req.body);
     const response = await product.save();
     res.json(response);
-    console.log(response);
   } catch (err) {
     res.status(400).json(err);
   }
 };
 
-exports.fetchAllProductById = async (req, res) => {
+exports.fetchProductById = async (req, res) => {
   try {
     const { id } = req.params;
     const product = await Product.findById(id);
@@ -51,25 +50,21 @@ exports.fetchAllProducts = async (req, res) => {
     res.json({ data: products, items: totalItems });
   } catch (err) {
     res.status(401).json(err);
-    console.log(err);
   }
 };
 
 exports.updateProduct = async (req, res) => {
   try {
-    if (req.body.length && req.body.id) {
-      const id = req.body.id;
-      console.log(id);
+    if (req.params && req.params.id) {
+      const { id } = req.params;
       response = await Product.findByIdAndUpdate(id, req.body, {
         new: true,
       });
-      console.log(response);
       res.status(201).json(response);
     } else {
       res.status(400).json("id not found");
     }
   } catch (err) {
     res.status(400).json(err);
-    console.log(err);
   }
 };

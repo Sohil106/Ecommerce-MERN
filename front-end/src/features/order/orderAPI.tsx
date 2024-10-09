@@ -1,10 +1,15 @@
-import { Order, OrderWithoutId } from "../../models/Order";
+import {
+  Order,
+  OrderToAdd,
+  OrderToUpdate,
+  OrderWithoutId,
+} from "../../models/Order";
 export interface OrdersResponse {
   orders: Order[];
   totalOrders: number;
 }
 
-export function createOrder(order: OrderWithoutId) {
+export function createOrder(order: OrderToAdd) {
   return new Promise<{ data: Order }>(async (resolve) => {
     const response = await fetch("http://localhost:8080/orders", {
       method: "POST",
@@ -17,7 +22,7 @@ export function createOrder(order: OrderWithoutId) {
   });
 }
 
-export function updateOrder(order: Order) {
+export function updateOrder(order: OrderToUpdate) {
   return new Promise<{ data: Order }>(async (resolve) => {
     const response = await fetch(`http://localhost:8080/orders/${order.id}`, {
       method: "PATCH",

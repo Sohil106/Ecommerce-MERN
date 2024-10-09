@@ -8,6 +8,10 @@ const mongoose = require("mongoose");
 const productsRouter = require("./routes/product");
 const categoriesRouter = require("./routes/category");
 const brandsRouter = require("./routes/brand");
+const userRouter = require("./routes/user");
+const authRouter = require("./routes/auth");
+const cartRouter = require("./routes/cart");
+const orderRouter = require("./routes/order");
 
 //db connection
 main().catch((err) => console.log(err));
@@ -26,6 +30,10 @@ server.use(express.json()); //to parse req.body
 server.use("/products", productsRouter.router);
 server.use("/categories", categoriesRouter.router);
 server.use("/brands", brandsRouter.router);
+server.use("/users", userRouter.router);
+server.use("/auth", authRouter.router);
+server.use("/cart", cartRouter.router);
+server.use("/orders", orderRouter.router);
 
 server.listen(process.env.PORT, () => {
   console.log("server started");
